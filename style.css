@@ -7,6 +7,7 @@ html, body {
   overflow-x: hidden; /* prevent sideways scroll on mobile Safari */
 }
 
+
 body {
   font-family: Arial, sans-serif;
   background: #0B4F6C;   /* deep blue */
@@ -62,13 +63,11 @@ header h2 {
 .header-text { padding: 16px 0; }
 
 .profile-pic {
-  max-width: 120px;    /* don’t go bigger than this by default */
-  width: 30%;          /* shrink with header on small screens */
-  aspect-ratio: 1 / 1; /* always a square */
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
+    width: 150px;           /* or whatever size you want */
+    height: auto;           /* keeps the aspect ratio */
+    border-radius: 0;       /* remove circular cropping */
+    object-fit: contain;    /* ensures the full image fits */
+  }
 
 /* ---------- Sections ---------- */
 section { padding: 32px 0; }
