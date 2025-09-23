@@ -1,0 +1,110 @@
+/* General page styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #0B4F6C; /* deep blue background */
+    color: #F1EDEE;      /* off-white text */
+    line-height: 1.6;
+}
+
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+    background: #063549;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header h2 {
+    margin-top: 0.5rem;
+    font-weight: normal;
+    font-size: 1.2rem;
+    color: #E2E8F0;
+}
+
+/* Section headings */
+section h2, section h3 {
+    text-align: center;
+    margin: 2rem 0 1rem;
+}
+
+/* Container for grouped cards (projects, experience, etc.) */
+.projects,
+.work-experience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Card styling */
+.card {
+    background: #E2E8F0;
+    color: #0B4F6C;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* Buttons */
+.project-button {
+    margin-top: 12px;
+    background: #0B4F6C;
+    border: none;
+    border-radius: 6px;
+    padding: 10px 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.project-button a {
+    color: #F1EDEE;
+    text-decoration: none;
+}
+
+.project-button:hover {
+    background: #145A7A;
+}
+.volunteering-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.projects,
+.work-experience {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+/* Volunteering stays a normal block section;
+   only its inner wrapper becomes the grid */
+.volunteering { 
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.volunteering-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 24px;
+}
