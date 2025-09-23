@@ -49,12 +49,13 @@ header h2 {
 .header-text { padding: 16px; }
 
 .profile-pic {
-  width: 120px;
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-}
+    max-width: 120px;      /* don’t go bigger than this by default */
+    width: 30%;            /* shrink to 30% of the header width on small screens */
+    aspect-ratio: 1 / 1;   /* always a square */
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+  }
 
 /* ---------- Sections ---------- */
 section { padding: 32px 0; }
@@ -162,6 +163,7 @@ section h2, section h3 {
 }
 
 @media (min-width: 900px) {
-  .profile-pic { width: 160px; }
-  .header-text { padding: 30px; }
-}
+    .profile-pic {
+      max-width: 160px;    /* allow a larger image on desktop */
+    }
+  }
