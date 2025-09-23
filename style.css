@@ -11,8 +11,7 @@ body {
   background: #0B4F6C;   /* deep blue */
   color: #F1EDEE;        /* off-white */
   line-height: 1.6;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding: 0 16px;       /* ✅ mobile gutter so text isn't at screen edges */
 }
 
 /* Media and long text scale nicely on mobile */
@@ -23,7 +22,7 @@ pre, code { white-space: pre-wrap; word-break: break-word; }
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 16px;
+  padding: 0;            /* no extra side padding; body handles it */
 }
 
 /* ---------- Header ---------- */
@@ -31,7 +30,7 @@ header {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 24px 16px;
+  padding: 24px 0;       /* rely on body padding for left/right */
   background: #063549;
   text-align: left;
 }
@@ -48,16 +47,16 @@ header h2 {
   color: #E2E8F0;
 }
 
-.header-text { padding: 16px; }
+.header-text { padding: 16px 0; }
 
 .profile-pic {
-    max-width: 120px;      /* don’t go bigger than this by default */
-    width: 30%;            /* shrink to 30% of the header width on small screens */
-    aspect-ratio: 1 / 1;   /* always a square */
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-  }
+  max-width: 120px;    /* don’t go bigger than this by default */
+  width: 30%;          /* shrink with header on small screens */
+  aspect-ratio: 1 / 1; /* always a square */
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+}
 
 /* ---------- Sections ---------- */
 section { padding: 32px 0; }
@@ -67,7 +66,7 @@ section h2, section h3 {
   margin: 2rem 0 1rem;
 }
 
-.subtitle { padding: 16px; }
+.subtitle { padding: 16px 0; }
 
 /* ---------- Responsive Grids ---------- */
 /* Mobile-first: single column */
@@ -79,16 +78,15 @@ section h2, section h3 {
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px;
-  /* equal-height rows so cards line up */
-  grid-auto-rows: 1fr;
+  padding: 0;           /* ✅ remove side padding here; body already adds it */
+  grid-auto-rows: 1fr;  /* equal-height rows so cards line up */
 }
 
 /* Volunteering outer section as a normal block */
 .volunteering {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 16px;
+  padding: 0;           /* ✅ no side padding */
 }
 
 /* ---------- Cards ---------- */
@@ -100,7 +98,6 @@ section h2, section h3 {
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 
-  /* stack content; allow footer buttons to pin to bottom */
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -152,8 +149,8 @@ section h2, section h3 {
 
 /* ---------- Breakpoints ---------- */
 @media (min-width: 600px) {
-  header { padding: 32px 16px; }
-  .header-text { padding: 24px; }
+  header { padding: 32px 0; }
+  .header-text { padding: 24px 0; }
 
   /* switch to multi-column grids on tablets and up */
   .projects,
@@ -164,8 +161,10 @@ section h2, section h3 {
   }
 }
 
+@media (min-width: 768px) {
+  body { padding: 0 32px; }   /* ✅ wider gutters on tablets+ */
+}
+
 @media (min-width: 900px) {
-    .profile-pic {
-      max-width: 160px;    /* allow a larger image on desktop */
-    }
-  }
+  .profile-pic { max-width: 160px; }  /* allow a larger image on desktop */
+}
