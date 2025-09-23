@@ -4,6 +4,7 @@
 html, body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden; /* prevent sideways scroll on mobile Safari */
 }
 
 body {
@@ -11,7 +12,18 @@ body {
   background: #0B4F6C;   /* deep blue */
   color: #F1EDEE;        /* off-white */
   line-height: 1.6;
-  padding: 0 16px;       /* ✅ mobile gutter so text isn't at screen edges */
+
+  /* default gutter for all browsers */
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* iOS Safari safe-area support */
+@supports (padding: max(0px)) {
+  body {
+    padding-left: max(16px, env(safe-area-inset-left));
+    padding-right: max(16px, env(safe-area-inset-right));
+  }
 }
 
 /* Media and long text scale nicely on mobile */
@@ -22,7 +34,7 @@ pre, code { white-space: pre-wrap; word-break: break-word; }
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0;            /* no extra side padding; body handles it */
+  padding: 0;            /* gutters handled by body */
 }
 
 /* ---------- Header ---------- */
@@ -30,7 +42,7 @@ header {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 24px 0;       /* rely on body padding for left/right */
+  padding: 24px 0;       /* rely on body padding for sides */
   background: #063549;
   text-align: left;
 }
@@ -69,7 +81,6 @@ section h2, section h3 {
 .subtitle { padding: 16px 0; }
 
 /* ---------- Responsive Grids ---------- */
-/* Mobile-first: single column */
 .projects,
 .work-experience,
 .volunteering-cards {
@@ -78,15 +89,14 @@ section h2, section h3 {
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0;           /* ✅ remove side padding here; body already adds it */
-  grid-auto-rows: 1fr;  /* equal-height rows so cards line up */
+  padding: 0;           /* no side padding; body already adds it */
+  grid-auto-rows: 1fr;
 }
 
-/* Volunteering outer section as a normal block */
 .volunteering {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0;           /* ✅ no side padding */
+  padding: 0;
 }
 
 /* ---------- Cards ---------- */
@@ -108,14 +118,12 @@ section h2, section h3 {
   box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
-/* Inner container pattern if you use it in HTML */
 .card > .container {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-/* Buttons */
 .project-button {
   background: #0B4F6C;
   border: none;
@@ -124,7 +132,7 @@ section h2, section h3 {
   cursor: pointer;
   transition: background 0.3s ease;
   margin-top: auto;           /* pin to bottom of card */
-  align-self: flex-start;     /* natural button width */
+  align-self: flex-start;
 }
 
 .project-button a {
@@ -134,14 +142,12 @@ section h2, section h3 {
 
 .project-button:hover { background: #145A7A; }
 
-/* If you ever wrap multiple buttons */
 .card .actions {
   margin-top: auto;
   display: flex;
   gap: 10px;
 }
 
-/* Links in contact area keep site color */
 .contact-info a {
   color: #F1EDEE;
   text-decoration: none;
@@ -152,7 +158,6 @@ section h2, section h3 {
   header { padding: 32px 0; }
   .header-text { padding: 24px 0; }
 
-  /* switch to multi-column grids on tablets and up */
   .projects,
   .work-experience,
   .volunteering-cards {
@@ -162,9 +167,19 @@ section h2, section h3 {
 }
 
 @media (min-width: 768px) {
-  body { padding: 0 32px; }   /* ✅ wider gutters on tablets+ */
+  body {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(32px, env(safe-area-inset-left));
+      padding-right: max(32px, env(safe-area-inset-right));
+    }
+  }
 }
 
 @media (min-width: 900px) {
-  .profile-pic { max-width: 160px; }  /* allow a larger image on desktop */
+  .profile-pic { max-width: 160px; }
 }
