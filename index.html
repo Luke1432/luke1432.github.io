@@ -5,22 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <title>Lukas Fenkam</title>
 </head>
 
 <body>
     <header>
-        <h1>Lukas Fenkam</h1>
-        <h2>Computer Science Student & AI/Software Developer</h2>
+        <img src="image.png" alt="Lukas Fenkam" class="profile-pic">
+        <div class="header-text">
+            <h1>Lukas Fenkam</h1>
+            <h2>Computer Science Student & AI/Software Developer</h2>
+        </div>
     </header>
     <section class="about">
-        <h3>About Me</h3>
+        <h2>About Me</h2>
         <p>I am a Computer Science student passionate about artificial intelligence and software development. My
             experience ranges from AI research in forensic analysis to open-source contributions with Red Hat. I enjoy
             turning ideas into impactful projects and exploring emerging technologies.</p>
     </section>
     <section class="project-section">
-        <h3 class="subtitle">Projects</h3>
+        <h2 class="subtitle">Projects</h2>
         <div class="projects">
             <div class="card">
                 <div class="container">
@@ -42,10 +46,17 @@
                             href="https://github.com/Luke1432/https://github.com/Luke1432/quarkus-github-bot">GitHub</a></button>
                 </div>
             </div>
+            <div class="card">
+                <div class="container">
+                    <h4>Techwave Solutions</h4>
+                    <p>A full-stack web application built with Django that provides secure authentication, role-based access, and an admin dashboard. The project focused on user management, backend integration, and clean UI workflows. Developed collaboratively using Agile practices such as retrospectives and sprint planning, with emphasis on scalability and maintainability.</p>
+                    <button class="project-button"><a href="https://github.com/kz4killua/techwave/">GitHub</a></button>
+                </div>
+            </div>
         </div>
     </section>
     <section id="experience" class="experience">
-        <h2>Work Experience</h2>
+        <h2 class="subtitle">Work Experience</h2>
         <div class="work-experience">
                 <!-- Research Intern -->
                 <div class="card">
@@ -73,12 +84,12 @@
 
     <!-- ===== Volunteering ===== -->
     <section id="volunteering" class="volunteering">
-        <h2>Volunteering</h2>
+        <h2 class="subtitle">Volunteering</h2>
         <div class="volunteering-cards">
             <!-- Event Organizer -->
             <div class="card">
                 <h4>Event Organizer & Workshop Leader — HackApro</h4>
-                <p>2023 – Present</p>
+                <p>2024 – Present</p>
                 <ul>
                     <li>Co-organized a bilingual youth hackathon (60+ participants, ages 8–19).</li>
                     <li>Led beginner-friendly coding workshops and coordinated judges/volunteers.</li>
@@ -87,7 +98,13 @@
             </div>
         </div>
     </section>
-
+    <section id="contact">
+        <div class="contact-info">
+            <h2 class="subtitle">Contact Me</h2>
+            <i class="fa fa-envelope"></i><a href="mailto:lukas@fenkam.name?subject=Portfolio Inquiry&body=Hi Lukas, I found your portfolio and...">   lukas@fenkam.name</a>
+            <p></p>
+            <i class="fab fa-linkedin"></i><a href="https://www.linkedin.com/in/lukas-fenkam-242a97266/">  https://www.linkedin.com/in/lukas-fenkam-242a97266/</a>
+        </div>
     </section>
 
 </body>

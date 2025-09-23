@@ -2,16 +2,17 @@
 body {
     font-family: Arial, sans-serif;
     margin: 0;
-    padding: 0;
+    padding: 30px;
     background: #0B4F6C; /* deep blue background */
     color: #F1EDEE;      /* off-white text */
     line-height: 1.6;
 }
 
 header {
-    text-align: center;
+    text-align: left;
     padding: 2rem 1rem;
     background: #063549;
+    display: flex;
 }
 
 header h1 {
@@ -24,6 +25,10 @@ header h2 {
     font-weight: normal;
     font-size: 1.2rem;
     color: #E2E8F0;
+}
+
+.header-text{
+    padding: 30px;
 }
 
 /* Section headings */
@@ -51,6 +56,11 @@ section h2, section h3 {
     padding: 20px;
     box-shadow: 0 4px 10px rgba(0,0,0,0.15);
     transition: transform 0.2s ease;
+
+    /* added: make inner layout a column so the button can sit at the bottom */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card:hover {
@@ -66,6 +76,9 @@ section h2, section h3 {
     padding: 10px 16px;
     cursor: pointer;
     transition: background 0.3s ease;
+
+    /* added: push the button to the bottom of the card */
+    margin-top: auto;
 }
 
 .project-button a {
@@ -80,7 +93,7 @@ section h2, section h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
-    max-width: 1000px;
+    max-width: 500px;
     margin: 0 auto;
     padding: 0 16px;
 }
@@ -93,6 +106,7 @@ section h2, section h3 {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 16px;
+    grid-auto-rows: 1fr; /* equal-height cards already in place */
 }
 
 /* Volunteering stays a normal block section;
@@ -107,4 +121,53 @@ section h2, section h3 {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 24px;
+}
+
+.volunteering-cards:hover{
+    transform: translateY(-4px);
+}
+
+.profile-pic {
+    border-radius: 50%;;
+    display: flex;
+}
+
+.contact-info a{
+    color: #F1EDEE;
+    text-decoration: none;
+}
+
+/* Keep equal heights for grid items (if not already set) */
+.projects,
+.work-experience,
+.volunteering-cards {
+  grid-auto-rows: 1fr;
+}
+
+/* Let each card fill its grid cell */
+.card {
+  height: 100%;
+}
+
+/* Stack the inner content and pin the button at the bottom */
+.card > .container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card > .container > .project-button {
+  margin-top: auto;       /* 👈 pins GitHub button to bottom of the card */
+  align-self: flex-start; /* keep your current button width */
+}
+
+/* If you ever wrap multiple buttons, e.g., <div class="actions">...</div> */
+.card > .container > .actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+}
+
+.subtitle{
+    padding: 30px;
 }
