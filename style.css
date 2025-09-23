@@ -65,7 +65,6 @@ header h2 {
 .profile-pic {
     width: 150px;           /* or whatever size you want */
     height: auto;           /* keeps the aspect ratio */
-    border-radius: 0;       /* remove circular cropping */
     object-fit: contain;    /* ensures the full image fits */
   }
 
