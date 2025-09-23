@@ -14,8 +14,8 @@ body {
   line-height: 1.6;
 
   /* default gutter for all browsers */
-  padding-left: 16px;
-  padding-right: 16px;
+  padding-left: 32px;
+  padding-right: 32px;
 }
 
 /* iOS Safari safe-area support */
