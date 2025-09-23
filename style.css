@@ -1,173 +1,167 @@
-/* General page styles */
-body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 30px;
-    background: #0B4F6C; /* deep blue background */
-    color: #F1EDEE;      /* off-white text */
-    line-height: 1.6;
+/* ---------- Base / Reset ---------- */
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
 }
 
+body {
+  font-family: Arial, sans-serif;
+  background: #0B4F6C;   /* deep blue */
+  color: #F1EDEE;        /* off-white */
+  line-height: 1.6;
+}
+
+/* Media and long text scale nicely on mobile */
+img, video { max-width: 100%; height: auto; display: block; }
+pre, code { white-space: pre-wrap; word-break: break-word; }
+
+/* Optional centered content wrapper (use in HTML if you like) */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+/* ---------- Header ---------- */
 header {
-    text-align: left;
-    padding: 2rem 1rem;
-    background: #063549;
-    display: flex;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 16px;
+  background: #063549;
+  text-align: left;
 }
 
 header h1 {
-    margin: 0;
-    font-size: 2.5rem;
+  margin: 0;
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 2.5rem);
 }
 
 header h2 {
-    margin-top: 0.5rem;
-    font-weight: normal;
-    font-size: 1.2rem;
-    color: #E2E8F0;
+  margin-top: 0.5rem;
+  font-weight: normal;
+  font-size: clamp(1rem, 1.2vw + 0.9rem, 1.25rem);
+  color: #E2E8F0;
 }
 
-.header-text{
-    padding: 30px;
-}
-
-/* Section headings */
-section h2, section h3 {
-    text-align: center;
-    margin: 2rem 0 1rem;
-}
-
-/* Container for grouped cards (projects, experience, etc.) */
-.projects,
-.work-experience {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-/* Card styling */
-.card {
-    background: #E2E8F0;
-    color: #0B4F6C;
-    border-radius: 12px;
-    padding: 20px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-    transition: transform 0.2s ease;
-
-    /* added: make inner layout a column so the button can sit at the bottom */
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-
-/* Buttons */
-.project-button {
-    margin-top: 12px;
-    background: #0B4F6C;
-    border: none;
-    border-radius: 6px;
-    padding: 10px 16px;
-    cursor: pointer;
-    transition: background 0.3s ease;
-
-    /* added: push the button to the bottom of the card */
-    margin-top: auto;
-}
-
-.project-button a {
-    color: #F1EDEE;
-    text-decoration: none;
-}
-
-.project-button:hover {
-    background: #145A7A;
-}
-.volunteering-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.projects,
-.work-experience {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 16px;
-    grid-auto-rows: 1fr; /* equal-height cards already in place */
-}
-
-/* Volunteering stays a normal block section;
-   only its inner wrapper becomes the grid */
-.volunteering { 
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 16px;
-}
-
-.volunteering-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 24px;
-}
-
-.volunteering-cards:hover{
-    transform: translateY(-4px);
-}
+.header-text { padding: 16px; }
 
 .profile-pic {
-    border-radius: 50%;;
-    display: flex;
+  width: 120px;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
-.contact-info a{
-    color: #F1EDEE;
-    text-decoration: none;
+/* ---------- Sections ---------- */
+section { padding: 32px 0; }
+
+section h2, section h3 {
+  text-align: center;
+  margin: 2rem 0 1rem;
 }
 
-/* Keep equal heights for grid items (if not already set) */
+.subtitle { padding: 16px; }
+
+/* ---------- Responsive Grids ---------- */
+/* Mobile-first: single column */
 .projects,
 .work-experience,
 .volunteering-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+  /* equal-height rows so cards line up */
   grid-auto-rows: 1fr;
 }
 
-/* Let each card fill its grid cell */
+/* Volunteering outer section as a normal block */
+.volunteering {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+/* ---------- Cards ---------- */
 .card {
+  background: #E2E8F0;
+  color: #0B4F6C;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* stack content; allow footer buttons to pin to bottom */
+  display: flex;
+  flex-direction: column;
   height: 100%;
 }
 
-/* Stack the inner content and pin the button at the bottom */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+}
+
+/* Inner container pattern if you use it in HTML */
 .card > .container {
   display: flex;
   flex-direction: column;
   height: 100%;
 }
 
-.card > .container > .project-button {
-  margin-top: auto;       /* 👈 pins GitHub button to bottom of the card */
-  align-self: flex-start; /* keep your current button width */
+/* Buttons */
+.project-button {
+  background: #0B4F6C;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: auto;           /* pin to bottom of card */
+  align-self: flex-start;     /* natural button width */
 }
 
-/* If you ever wrap multiple buttons, e.g., <div class="actions">...</div> */
-.card > .container > .actions {
+.project-button a {
+  color: #F1EDEE;
+  text-decoration: none;
+}
+
+.project-button:hover { background: #145A7A; }
+
+/* If you ever wrap multiple buttons */
+.card .actions {
   margin-top: auto;
   display: flex;
   gap: 10px;
 }
 
-.subtitle{
-    padding: 30px;
+/* Links in contact area keep site color */
+.contact-info a {
+  color: #F1EDEE;
+  text-decoration: none;
+}
+
+/* ---------- Breakpoints ---------- */
+@media (min-width: 600px) {
+  header { padding: 32px 16px; }
+  .header-text { padding: 24px; }
+
+  /* switch to multi-column grids on tablets and up */
+  .projects,
+  .work-experience,
+  .volunteering-cards {
+    gap: 24px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .profile-pic { width: 160px; }
+  .header-text { padding: 30px; }
 }
