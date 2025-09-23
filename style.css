@@ -11,7 +11,8 @@ body {
   background: #0B4F6C;   /* deep blue */
   color: #F1EDEE;        /* off-white */
   line-height: 1.6;
-  padding: 50px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 
 /* Media and long text scale nicely on mobile */
