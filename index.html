@@ -25,6 +25,7 @@
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#volunteering" class="nav-link">Volunteering</a>
+        <a href="#resume" class="nav-link">Resume</a>
         <a href="#contact" class="nav-link">Contact</a>
       </nav>
     </div>
@@ -189,6 +190,22 @@
         </div>
     </section>
 
+    <!-- Resume -->
+    <section id="resume">
+        <h2 class="subtitle">Resume</h2>
+        <p style="text-align:center;">
+          <a class="download-btn" href="resume.pdf" download>⬇️ Download Resume (PDF)</a>
+        </p>
+        <div class="pdfjs-container">
+          <div id="pdfjs-view"></div>
+        </div>
+        <p style="text-align:center; margin-top:16px;">
+          <a class="download-btn" href="resume.pdf" download>⬇️ Download Resume (PDF)</a>
+        </p>
+      </section>
+      
+      
+
   <!-- Contact -->
   <section id="contact">
     <div class="contact-info">
@@ -217,6 +234,12 @@
     <p>&copy; 2025 Lukas Fenkam. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script>
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+</script>
+<script src="script.js"></script>
+
 </body>
 </html>

@@ -391,3 +391,69 @@ a[aria-current="page"]::after{
 .external-link {
   color:#063549;
 }
+
+.pdf-wrapper {
+  max-width: 800px;   /* match your content width */
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.pdf-frame {
+  width: 88%;
+  height: 1825px;     /* just tall enough for 1 page */
+  border: none;
+  overflow: hidden;   /* removes iframe scrollbar */
+  display: block;
+  margin: 0 auto;
+}
+
+/* ===== PDF.js viewer (transparent, centered, responsive) ===== */
+#resume { padding: 32px 0; }
+
+.pdfjs-container {
+  max-width: 800px;          /* match your content width */
+  margin: 0 auto;
+  padding: 0;
+  display: flex;
+  justify-content: center;   /* center the canvas */
+}
+
+#pdfjs-view canvas {
+  display: block;
+  width: 100%;               /* responsive width */
+  height: auto;              /* keep aspect ratio */
+  background: transparent;   /* 🔑 see-through */
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+/* Multi-page layout */
+#pdfjs-view {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* keep each page centered */
+  gap: 24px;            /* space between pages */
+}
+#pdfjs-view canvas {
+  display: block;
+  width: 100%;          /* scale to container width */
+  height: auto;
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
+
+.download-btn {
+  display: inline-block;
+  background: #0B4F6C;
+  color: #F1EDEE;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+.download-btn:hover {
+  background: #145A7A;
+}
