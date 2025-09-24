@@ -386,8 +386,11 @@ a[aria-current="page"]::after{
   padding: 0;
   display: flex;
   justify-content: center;
-  background-color: #F1EDEE;
   border-radius: 12px;
+}
+
+#linux-cert{
+  background-color: #F1EDEE;
 }
 
 .pdfjs-view canvas {
