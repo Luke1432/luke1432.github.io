@@ -8,15 +8,22 @@ html, body {
 
 
 body {
-  font-family: Arial, sans-serif;
-  background: #0B4F6C;   /* deep blue */
-  color: #F1EDEE;        /* off-white */
-  line-height: 1.6;
+  /* use background-color, not the shorthand 'background' */
+  background-color: #0B4F6C;
 
-  /* default gutter for all browsers */
+  /* your pattern */
+  background-image: url("pattern.png");   /* prefer .png or .svg */
+  background-repeat: repeat;
+  background-size: auto;                  /* or 24px 24px if it's tiny */
+  background-position: top left;
+
+  font-family: Arial, sans-serif;
+  color: #F1EDEE;
+  line-height: 1.6;
   padding-left: 32px;
-  padding-right: 32px;
+  padding-right: 32px;  
 }
+
 
 /* iOS Safari safe-area support */
 @supports (padding: max(0px)) {
@@ -179,4 +186,33 @@ section h2, section h3 {
 
 @media (min-width: 900px) {
   .profile-pic { max-width: 160px; }
+}
+
+.skills {
+  color: #F1EDEE;
+  padding: 16px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.skills-scroll {
+  display: flex;
+  width: max-content;
+  animation: scroll 25s linear infinite;
+}
+
+.scrolling-text {
+  display: flex;
+}
+
+.scrolling-text span {
+  padding: 0 40px;         /* equal spacing */
+  font-size: 1.2rem;
+  white-space: nowrap;
+}
+
+/* Keyframes for smooth infinite loop */
+@keyframes scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
