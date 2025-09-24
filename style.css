@@ -369,3 +369,143 @@ section h2, section h3 {
   /* Make sure images in header never overflow */
   header img { max-width: 100%; height: auto; }
 }
+
+
+/* --- Keep header contents clipped so nothing spills out --- */
+header { overflow: hidden; }
+
+/* --- Make sure images can never be wider than their container --- */
+header img,
+.profile-pic { max-width: 100%; height: auto; }
+
+/* --- Ensure the sticky menu has the same blue background and doesn't spill --- */
+.menu-bar {
+  background: #063549;     /* matches header */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================
+   MOBILE FIXES (<= 768px)
+   ========================= */
+@media (max-width: 768px) {
+  /* Softer gutters on phones, prevents fake “overflow” look */
+  body { padding-left: 16px; padding-right: 16px; }
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
+    }
+  }
+
+  /* Header: allow wrapping so logo + titles stay inside the blue box */
+  header {
+    display: flex;       /* safe even if already flex */
+    flex-wrap: wrap;     /* <-- key: lets rows wrap */
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  /* Logo: shrink on phones and never exceed the header width */
+  .profile-pic {
+    width: 108px;        /* smaller only on mobile */
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  /* Text block: allow it to shrink and wrap */
+  .header-text {
+    flex: 1 1 240px;
+    min-width: 0;        /* prevents long words pushing outside */
+    padding: 8px 0;
+  }
+
+  header h1 { font-size: clamp(1.25rem, 6vw, 1.75rem); margin: 0; }
+  header h2 { font-size: clamp(0.95rem, 4.2vw, 1.15rem); margin: 0; }
+
+  /* Nav: allow wrapping onto multiple lines inside the blue area */
+  .menu-bar {
+    display: flex;       /* safe even if already flex */
+    flex-wrap: wrap;     /* <-- key: lets links wrap to next line */
+    gap: 12px 16px;      /* row gap / column gap */
+    padding: 8px 0;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .menu-bar .nav-link {
+    padding: 6px 8px;    /* big enough tap targets without stretching */
+    white-space: normal; /* allow wrapping */
+  }
+}
+
+
+
+  /* --- Keep header contents clipped so nothing spills out --- */
+header { overflow: hidden; }
+
+/* --- Make sure images can never be wider than their container --- */
+header img,
+.profile-pic { max-width: 100%; height: auto; }
+
+/* --- Ensure the sticky menu has the same blue background and doesn't spill --- */
+.menu-bar {
+  background: #063549;     /* matches header */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* =========================
+   MOBILE FIXES (<= 768px)
+   ========================= */
+@media (max-width: 768px) {
+  /* Softer gutters on phones, prevents fake “overflow” look */
+  body { padding-left: 16px; padding-right: 16px; }
+  @supports (padding: max(0px)) {
+    body {
+      padding-left: max(16px, env(safe-area-inset-left));
+      padding-right: max(16px, env(safe-area-inset-right));
+    }
+  }
+
+  /* Header: allow wrapping so logo + titles stay inside the blue box */
+  header {
+    display: flex;       /* safe even if already flex */
+    flex-wrap: wrap;     /* <-- key: lets rows wrap */
+    gap: 12px;
+    padding: 16px 0;
+  }
+
+  /* Logo: shrink on phones and never exceed the header width */
+  .profile-pic {
+    width: 108px;        /* smaller only on mobile */
+    height: auto;
+    flex: 0 0 auto;
+  }
+
+  /* Text block: allow it to shrink and wrap */
+  .header-text {
+    flex: 1 1 240px;
+    min-width: 0;        /* prevents long words pushing outside */
+    padding: 8px 0;
+  }
+
+  header h1 { font-size: clamp(1.25rem, 6vw, 1.75rem); margin: 0; }
+  header h2 { font-size: clamp(0.95rem, 4.2vw, 1.15rem); margin: 0; }
+
+  /* Nav: allow wrapping onto multiple lines inside the blue area */
+  .menu-bar {
+    display: flex;       /* safe even if already flex */
+    flex-wrap: wrap;     /* <-- key: lets links wrap to next line */
+    gap: 12px 16px;      /* row gap / column gap */
+    padding: 8px 0;
+    justify-content: center;
+    max-width: 100%;
+  }
+
+  .menu-bar .nav-link {
+    padding: 6px 8px;    /* big enough tap targets without stretching */
+    /* let links wrap normally; don't force no-wrap */
+    white-space: normal;
+  }
+}

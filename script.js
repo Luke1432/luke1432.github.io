@@ -3,8 +3,15 @@ function smoothScroll(target, duration = 1200) {
     const el = document.querySelector(target);
     if (!el) return;
   
+    // Respect reduced motion
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (prefersReduced) {
+      el.scrollIntoView();
+      return;
+    }
+  
     const start = window.pageYOffset;
-    const end = el.getBoundingClientRect().top;
+    const delta = el.getBoundingClientRect().top; // distance to target from current scroll
     let startTime = null;
   
     function easeInOutQuad(t, b, c, d) {
@@ -17,9 +24,16 @@ function smoothScroll(target, duration = 1200) {
     function animate(time) {
       if (startTime === null) startTime = time;
       const elapsed = time - startTime;
-      const run = easeInOutQuad(elapsed, start, end, duration);
+      const run = easeInOutQuad(elapsed, start, delta, duration);
       window.scrollTo(0, run);
-      if (elapsed < duration) requestAnimationFrame(animate);
+      if (elapsed < duration) {
+        requestAnimationFrame(animate);
+      } else {
+        // Snap to exact position at the end and update the hash (no jump)
+        window.scrollTo(0, start + delta);
+        const id = target.startsWith('#') ? target.slice(1) : target;
+        if (id) history.replaceState(null, '', `#${id}`);
+      }
     }
   
     requestAnimationFrame(animate);
@@ -29,8 +43,7 @@ function smoothScroll(target, duration = 1200) {
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener("click", function (e) {
       const target = this.getAttribute("href");
-      // ignore if just "#"
-      if (!target || target === "#") return;
+      if (!target || target === "#") return; // ignore empty hash
       e.preventDefault();
       smoothScroll(target, 1200); // 1200ms = 1.2s
     });
@@ -40,48 +53,27 @@ function smoothScroll(target, duration = 1200) {
   const backToTopBtn = document.getElementById("backToTop");
   
   function toggleBackToTop() {
-    const y = document.documentElement.scrollTop || document.body.scrollTop;
-    if (y > 200) {
+    if (!backToTopBtn) return;
+    const y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    if (y > 400) {
       backToTopBtn.classList.add("show");
     } else {
       backToTopBtn.classList.remove("show");
     }
   }
   
-  window.addEventListener("scroll", toggleBackToTop);
+  window.addEventListener("scroll", toggleBackToTop, { passive: true });
+  toggleBackToTop(); // Initialize state on load
   
-  backToTopBtn.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  });
-  
-  // Initialize state on load
-  toggleBackToTop();
-  
-  // Back to Top button toggle + smooth scroll (respects reduced motion)
-(function () {
-    const btn = document.getElementById('backToTop');
-    if (!btn) return;
-  
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  
-    function onScroll() {
-      if (window.scrollY > 400) {
-        btn.classList.add('show');
-      } else {
-        btn.classList.remove('show');
-      }
-    }
-  
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll(); // initial state
-  
-    btn.addEventListener('click', (e) => {
+  if (backToTopBtn) {
+    backToTopBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
       if (prefersReduced) {
         window.scrollTo(0, 0);
       } else {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
+        window.scrollTo({ top: 0, behavior: "smooth" });
       }
     });
-  })();
+  }
   
