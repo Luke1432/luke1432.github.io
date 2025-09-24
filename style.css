@@ -237,19 +237,19 @@ section h2, section h3 {
 /* ==== NAV UNDERLINE (center-out animation) ==== */
 :root{
   --underline-height: 2px;
-  --underline-gap: 10px;     /* space between word and line */
+  --underline-gap: 2px;     /* space between word and line */
   --underline-speed: 400ms;
   --underline-ease: ease;
 }
 
-.menu-bar .nav-link{
+a {
   position: relative;
   text-decoration: none;
   color: #F1EDEE;
   padding: 6px 0;            /* vertical click target */
 }
 
-.menu-bar .nav-link::after{
+a::after{
   content: "";
   position: absolute;
   left: 50%;
@@ -263,10 +263,10 @@ section h2, section h3 {
   border-radius: 999px;
 }
 
-.menu-bar .nav-link:hover::after,
-.menu-bar .nav-link:focus-visible::after,
-.menu-bar .nav-link.active::after,
-.menu-bar .nav-link[aria-current="page"]::after{
+a:hover::after,
+a:focus-visible::after,
+a.active::after,
+a[aria-current="page"]::after{
   transform: translateX(-50%) scaleX(1);  /* grows outward from center */
 }
 
@@ -378,7 +378,7 @@ section h2, section h3 {
     max-width: 100%;
   }
 
-  .menu-bar .nav-link {
+  a {
     padding: 6px 8px;
     white-space: normal;  /* allow wrapping */
     text-align: center;
@@ -386,4 +386,8 @@ section h2, section h3 {
 
   /* Make sure images in header never overflow */
   header img { max-width: 100%; height: auto; }
+}
+
+.external-link {
+  color:#063549;
 }
