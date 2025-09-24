@@ -6,7 +6,6 @@ html, body {
   padding: 0;
 }
 
-
 body {
   /* use background-color, not the shorthand 'background' */
   background-color: #0B4F6C;
@@ -23,7 +22,6 @@ body {
   padding-left: 32px;
   padding-right: 32px;  
 }
-
 
 /* iOS Safari safe-area support */
 @supports (padding: max(0px)) {
@@ -52,6 +50,7 @@ header {
   padding: 24px 0;       /* rely on body padding for sides */
   background: #063549;
   text-align: left;
+  justify-content: center;
 }
 
 header h1 {
@@ -69,10 +68,10 @@ header h2 {
 .header-text { padding: 16px 0; }
 
 .profile-pic {
-    width: 150px;           /* or whatever size you want */
-    height: auto;           /* keeps the aspect ratio */
-    object-fit: contain;    /* ensures the full image fits */
-  }
+  width: 150px;
+  height: auto;
+  object-fit: contain;
+}
 
 /* ---------- Sections ---------- */
 section { padding: 32px 0; }
@@ -93,7 +92,7 @@ section h2, section h3 {
   gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0;           /* no side padding; body already adds it */
+  padding: 0;
   grid-auto-rows: 1fr;
 }
 
@@ -111,7 +110,6 @@ section h2, section h3 {
   padding: 20px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -175,7 +173,6 @@ section h2, section h3 {
     padding-left: 32px;
     padding-right: 32px;
   }
-
   @supports (padding: max(0px)) {
     body {
       padding-left: max(32px, env(safe-area-inset-left));
@@ -188,6 +185,7 @@ section h2, section h3 {
   .profile-pic { max-width: 160px; }
 }
 
+/* ---------- Skills scroller ---------- */
 .skills {
   color: #F1EDEE;
   padding: 16px 0;
@@ -216,3 +214,53 @@ section h2, section h3 {
   0%   { transform: translateX(0); }
   100% { transform: translateX(-50%); }
 }
+
+/* ---------- Menu bar ---------- */
+.menu-bar {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding: 12px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ==== NAV UNDERLINE (center-out animation) ==== */
+:root{
+  --underline-height: 2px;
+  --underline-gap: 10px;     /* space between word and line */
+  --underline-speed: 400ms;
+  --underline-ease: ease;
+}
+
+.menu-bar .nav-link{
+  position: relative;
+  text-decoration: none;
+  color: #F1EDEE;
+  padding: 6px 0;            /* vertical click target */
+}
+
+.menu-bar .nav-link::after{
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: calc(-1 * var(--underline-gap));
+  height: var(--underline-height);
+  width: 100%;
+  background: currentColor;
+  transform: translateX(-50%) scaleX(0);  /* start as a centered dot */
+  transform-origin: 50% 50%;
+  transition: transform var(--underline-speed) var(--underline-ease);
+  border-radius: 999px;
+}
+
+.menu-bar .nav-link:hover::after,
+.menu-bar .nav-link:focus-visible::after,
+.menu-bar .nav-link.active::after,
+.menu-bar .nav-link[aria-current="page"]::after{
+  transform: translateX(-50%) scaleX(1);  /* grows outward from center */
+}
+
+/* Smooth scroll (default speed); use JS if you want slower */
+html { scroll-behavior: smooth; }
