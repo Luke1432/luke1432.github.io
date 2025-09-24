@@ -57,3 +57,31 @@ function smoothScroll(target, duration = 1200) {
   // Initialize state on load
   toggleBackToTop();
   
+  // Back to Top button toggle + smooth scroll (respects reduced motion)
+(function () {
+    const btn = document.getElementById('backToTop');
+    if (!btn) return;
+  
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  
+    function onScroll() {
+      if (window.scrollY > 400) {
+        btn.classList.add('show');
+      } else {
+        btn.classList.remove('show');
+      }
+    }
+  
+    window.addEventListener('scroll', onScroll, { passive: true });
+    onScroll(); // initial state
+  
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (prefersReduced) {
+        window.scrollTo(0, 0);
+      } else {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  })();
+  
