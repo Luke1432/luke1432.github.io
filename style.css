@@ -6,21 +6,21 @@ html, body {
   padding: 0;
 }
 
-body {
-  /* use background-color, not the shorthand 'background' */
-  background-color: #0B4F6C;
+/* Use JS for custom speed; keep CSS smooth off to avoid double-effects */
+/* html { scroll-behavior: smooth; } */
 
-  /* your pattern */
-  background-image: url("pattern.png");   /* prefer .png or .svg */
+body {
+  background-color: #0B4F6C;           /* deep blue */
+  background-image: url("pattern.png");/* subtle repeating pattern */
   background-repeat: repeat;
-  background-size: auto;                  /* or 24px 24px if it's tiny */
+  background-size: auto;               /* adjust if your tile is small (e.g., 24px 24px) */
   background-position: top left;
 
   font-family: Arial, sans-serif;
   color: #F1EDEE;
   line-height: 1.6;
   padding-left: 32px;
-  padding-right: 32px;  
+  padding-right: 32px;
 }
 
 /* iOS Safari safe-area support */
@@ -35,11 +35,11 @@ body {
 img, video { max-width: 100%; height: auto; display: block; }
 pre, code { white-space: pre-wrap; word-break: break-word; }
 
-/* Optional centered content wrapper (use in HTML if you like) */
+/* Optional centered content wrapper */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0;            /* gutters handled by body */
+  padding: 0; /* gutters handled by body */
 }
 
 /* ---------- Header ---------- */
@@ -47,7 +47,7 @@ header {
   display: flex;
   align-items: center;
   gap: 16px;
-  padding: 24px 0;       /* rely on body padding for sides */
+  padding: 24px 0;          /* rely on body padding for sides */
   background: #063549;
   text-align: left;
   justify-content: center;
@@ -113,6 +113,7 @@ section h2, section h3 {
   display: flex;
   flex-direction: column;
   height: 100%;
+  opacity: 75%;
 }
 
 .card:hover {
@@ -262,5 +263,35 @@ section h2, section h3 {
   transform: translateX(-50%) scaleX(1);  /* grows outward from center */
 }
 
-/* Smooth scroll (default speed); use JS if you want slower */
-html { scroll-behavior: smooth; }
+/* ---------- Back to Top button ---------- */
+#backToTop {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  z-index: 1000;
+  width: 48px;
+  height: 48px;
+  border: none;
+  border-radius: 50%;
+  background-color: #F1EDEE;
+  color: #0B4F6C;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;               /* hidden by default */
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, background-color 0.2s ease;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#backToTop:hover {
+  background-color: #10739e;
+  color: #F1EDEE;
+  
+}

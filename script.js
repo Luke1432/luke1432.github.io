@@ -1,16 +1,11 @@
-function smoothScroll(target, duration) {
-    const element = document.querySelector(target);
-    const start = window.pageYOffset;
-    const end = element.getBoundingClientRect().top;
-    let startTime = null;
+// ---------- Smooth scrolling with custom duration ----------
+function smoothScroll(target, duration = 1200) {
+    const el = document.querySelector(target);
+    if (!el) return;
   
-    function animation(currentTime) {
-      if (startTime === null) startTime = currentTime;
-      const timeElapsed = currentTime - startTime;
-      const run = easeInOutQuad(timeElapsed, start, end, duration);
-      window.scrollTo(0, run);
-      if (timeElapsed < duration) requestAnimationFrame(animation);
-    }
+    const start = window.pageYOffset;
+    const end = el.getBoundingClientRect().top;
+    let startTime = null;
   
     function easeInOutQuad(t, b, c, d) {
       t /= d / 2;
@@ -19,13 +14,46 @@ function smoothScroll(target, duration) {
       return (-c / 2) * (t * (t - 2) - 1) + b;
     }
   
-    requestAnimationFrame(animation);
+    function animate(time) {
+      if (startTime === null) startTime = time;
+      const elapsed = time - startTime;
+      const run = easeInOutQuad(elapsed, start, end, duration);
+      window.scrollTo(0, run);
+      if (elapsed < duration) requestAnimationFrame(animate);
+    }
+  
+    requestAnimationFrame(animate);
   }
   
+  // Intercept all in-page anchor clicks
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+    anchor.addEventListener("click", function (e) {
+      const target = this.getAttribute("href");
+      // ignore if just "#"
+      if (!target || target === "#") return;
       e.preventDefault();
-      smoothScroll(this.getAttribute("href"), 1500); // 1500 ms = 1.5 seconds
+      smoothScroll(target, 1200); // 1200ms = 1.2s
     });
   });
+  
+  // ---------- Back to Top button ----------
+  const backToTopBtn = document.getElementById("backToTop");
+  
+  function toggleBackToTop() {
+    const y = document.documentElement.scrollTop || document.body.scrollTop;
+    if (y > 200) {
+      backToTopBtn.classList.add("show");
+    } else {
+      backToTopBtn.classList.remove("show");
+    }
+  }
+  
+  window.addEventListener("scroll", toggleBackToTop);
+  
+  backToTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+  
+  // Initialize state on load
+  toggleBackToTop();
   
