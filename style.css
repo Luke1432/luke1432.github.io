@@ -44,6 +44,7 @@ header {
   text-align: left;
   justify-content: center;
   overflow: hidden;
+  border-radius: 24px;
 }
 
 header h1 {
