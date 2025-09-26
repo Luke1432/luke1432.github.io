@@ -291,7 +291,7 @@ a::after {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -20px;            /* fixed offset below the text */
+  bottom: -20px;
   height: var(--underline-height);
   background: currentColor;
   transform: scaleX(0);
@@ -424,6 +424,7 @@ a[aria-current="page"]::after {
 .pdf-frame {
   width: 88%;
   height: 1825px;
+  height: 150vh;
   border: none;
   overflow: hidden;
   display: block;
