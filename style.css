@@ -442,6 +442,22 @@ a[aria-current="page"]::after {
   border-radius: 12px;
 }
 
+/* Hamburger button (hidden on desktop) */
+.hamburger {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 10px;
+  background: rgba(6,53,73,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
 @media (max-width: 768px) {
   .menu-bar {display:none;}
   .pdf-wrapper { padding: 0 8px; }
@@ -499,22 +515,6 @@ a[aria-current="page"]::after {
   max-width: 800px;
   margin: 0 auto;
   height: auto;
-}
-
-/* Hamburger button (hidden on desktop) */
-.hamburger {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  gap: 6px;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 10px;
-  background: rgba(6,53,73,0.55);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  cursor: pointer;
 }
 
 .hamburger span {
