@@ -434,7 +434,7 @@ a[aria-current="page"]::after {
 #resume { padding: 32px 0; }
 
 .pdfjs-container {
-  max-width: 800px;
+  max-width: auto;
   margin: 0 auto;
   padding: 0;
   display: flex;
@@ -472,3 +472,11 @@ a[aria-current="page"]::after {
 }
 
 .download-btn:hover { background: #145A7A; }
+
+#resume-pdf {
+  width: 50%;
+  height: 50%;
+  object-fit: cover; /* Ensures the PDF content is stretched and cropped */
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+}
