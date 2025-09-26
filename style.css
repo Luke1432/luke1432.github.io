@@ -440,6 +440,7 @@ a[aria-current="page"]::after {
   border: 0;
   object-fit: contain;
   border-radius: 12px;
+  max-width: 1300px;
 }
 
 @media (max-width: 768px) {
@@ -501,7 +502,7 @@ a[aria-current="page"]::after {
 .hamburger {
   display: none;
   position: fixed;
-  top: 12px;                /* lines up with your --nav-offset */
+  top: var(--nav-offset);
   right: 16px;
   z-index: 1100;
   width: 44px;
