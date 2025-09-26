@@ -8,6 +8,10 @@ html, body {
 :root {
   --nav-h: 48px;
   --nav-offset: 12px;
+  --underline-height: 2px;
+  --underline-gap: 2px;
+  --underline-speed: 400ms;
+  --underline-ease: ease;
 }
 
 body {
@@ -256,13 +260,6 @@ section h2, section h3 {
   border-color: transparent;
 }
 
-:root{
-  --underline-height: 2px;
-  --underline-gap: 2px;
-  --underline-speed: 400ms;
-  --underline-ease: ease;
-}
-
 a {
   position: relative;
   display: inline-block;
@@ -271,13 +268,12 @@ a {
   padding: 6px 0;
 }
 
-
 a::after {
   content: "";
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -4px;            /* fixed offset below the text */
+  bottom: -4px;
   height: var(--underline-height);
   background: currentColor;
   transform: scaleX(0);
@@ -353,7 +349,7 @@ a[aria-current="page"]::after {
   header {
     display: flex;
     flex-direction: column;
-    align-items: center; 
+    align-items: center;
     gap: 12px;
     padding: 16px 0;
     text-align: center;
@@ -414,29 +410,50 @@ a[aria-current="page"]::after {
 
 .external-link { color:#063549; }
 
+/* ===== PDF/Resume embed sizing (fixed) ===== */
 .pdf-wrapper {
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
+  padding: 0 16px;
 }
 
 .pdf-frame {
-  width: 88%;
-  height: 1825px;
-  height: 150vh;
+  width: 100%;
+  max-width: 900px;
   border: none;
-  overflow: hidden;
-  display: block;
+  overflow: show;
   margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
+  background: transparent;
+  height: 200vh;
 }
 
 #resume { padding: 32px 0; }
 
+#resume-pdf {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 0;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+@media (max-width: 768px) {
+  .pdf-wrapper { padding: 0 8px; }
+  .pdf-frame {
+    height: clamp(65vh, 80vh, 950px);
+    max-width: 720px;
+  }
+}
+
 .pdfjs-container {
-  max-width: auto;
+  max-width: 1000px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 16px;
   display: flex;
   justify-content: center;
   border-radius: 12px;
@@ -473,17 +490,90 @@ a[aria-current="page"]::after {
 
 .download-btn:hover { background: #145A7A; }
 
-#resume-pdf {
-  width: 50%;
-  height: 50%;
-  object-fit: cover; /* Ensures the PDF content is stretched and cropped */
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.25);
-}
-
 #linux-cert,
 #gen-ai-cert {
   max-width: 800px;
   margin: 0 auto;
   height: auto;
+}
+
+/* Hamburger base (hidden on desktop) */
+.hamburger {
+  display: none;
+  position: fixed;
+  top: 12px;                /* lines up with your --nav-offset */
+  right: 16px;
+  z-index: 1100;
+  width: 44px;
+  height: 44px;
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 12px;
+  background: rgba(6,53,73,0.55);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  cursor: pointer;
+}
+
+.hamburger .bar {
+  display: block;
+  width: 22px;
+  height: 2px;
+  margin: 5px auto;
+  background: #F1EDEE;
+  transition: transform .25s ease, opacity .25s ease;
+}
+
+/* X animation */
+.hamburger.is-open .bar:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.is-open .bar:nth-child(2) { opacity: 0; }
+.hamburger.is-open .bar:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile drawer (hidden by default via [hidden]) */
+.mobile-menu {
+  position: fixed;
+  top: calc(var(--nav-h) + var(--nav-offset));
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1090;
+  width: min(92vw, 720px);
+  background: rgba(6,53,73,0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 16px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  display: grid;
+  gap: 8px;
+  padding: 12px 16px;
+  opacity: 0;
+  pointer-events: none;
+  transform-origin: top center;
+  transition: opacity .2s ease, transform .2s ease;
+}
+
+.mobile-menu a {
+  padding: 10px 12px;
+  text-align: center;
+  color: #F1EDEE;
+}
+
+/* Open state (JS will toggle [hidden]) */
+.mobile-menu.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Mobile breakpoint: hide desktop menu, show hamburger, adjust underline */
+@media (max-width: 768px) {
+  .menu-bar { display: none; }          /* keep desktop nav untouched on larger screens */
+  .hamburger { display: inline-flex; align-items: center; justify-content: center; }
+
+  /* Make the mobile drawer slide down slightly */
+  .mobile-menu { transform: translate(-50%, 6px); }
+  .mobile-menu.is-open { transform: translate(-50%, 0); }
+}
+
+/* Optional: lock scroll when menu open */
+body.menu-open {
+  overflow: hidden;
 }

@@ -42,6 +42,24 @@
                 <a href="#resume" class="nav-link">Resume</a>
                 <a href="#contact" class="nav-link">Let's connect!</a>
             </nav>
+            <!-- (A) Hamburger button (mobile only) -->
+            <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+              <span class="bar"></span>
+              <span class="bar"></span>
+              <span class="bar"></span>
+            </button>
+
+            <!-- (B) Mobile menu drawer -->
+            <nav class="mobile-menu" id="mobile-menu" hidden>
+              <a href="#about" class="nav-link">About Me</a>
+              <a href="#projects" class="nav-link">Projects</a>
+              <a href="#experience" class="nav-link">Experience</a>
+              <a href="#volunteering" class="nav-link">Volunteering</a>
+              <a href="#certifications" class="nav-link">Certifications</a>
+              <a href="#resume" class="nav-link">Resume</a>
+              <a href="#contact" class="nav-link">Let's connect!</a>
+            </nav>
+
         </div>
     </header>
 
@@ -425,7 +443,7 @@
         
         function renderViewer(state) {
           if (!state.pdfDoc || !state.baseViewports.length) return;
-          const containerWidth = Math.min((state.wrapper && state.wrapper.clientWidth) || 800, 1100);
+          const containerWidth = Math.min((state.wrapper && state.wrapper.clientWidth) || 800, 1300);
           const jobs = [];
           for (let n = 1; n <= state.pdfDoc.numPages; n++) {
             jobs.push(
@@ -437,7 +455,7 @@
                 const ctx = canvas.getContext("2d", { alpha: true });
                 canvas.width = Math.floor(vp.width * DPR);
                 canvas.height = Math.floor(vp.height * DPR);
-                canvas.style.width = `${vp.width+100}px`;
+                canvas.style.width = `${vp.width}px`;
                 canvas.style.height = `${vp.height}px`;
                 ctx.setTransform(1, 0, 0, 1, 0, 0);
                 ctx.scale(DPR, DPR);
@@ -473,6 +491,51 @@
                   window.addEventListener('scroll', setTopState, { passive: true });
                   window.addEventListener('load', setTopState);
                 })();
+                </script>
+                <script>
+                  (function () {
+                    const btn = document.getElementById('hamburger');
+                    const menu = document.getElementById('mobile-menu');
+                    if (!btn || !menu) return;
+                
+                    function openMenu() {
+                      btn.classList.add('is-open');
+                      btn.setAttribute('aria-expanded', 'true');
+                      menu.hidden = false;
+                      // force reflow for transition
+                      void menu.offsetHeight;
+                      menu.classList.add('is-open');
+                      document.body.classList.add('menu-open');
+                    }
+                
+                    function closeMenu() {
+                      btn.classList.remove('is-open');
+                      btn.setAttribute('aria-expanded', 'false');
+                      menu.classList.remove('is-open');
+                      document.body.classList.remove('menu-open');
+                      // wait for transition to finish before hiding
+                      setTimeout(() => { if (!menu.classList.contains('is-open')) menu.hidden = true; }, 200);
+                    }
+                
+                    btn.addEventListener('click', () => {
+                      if (menu.hidden || !menu.classList.contains('is-open')) openMenu();
+                      else closeMenu();
+                    });
+                
+                    // Close on link click (for smoother anchor navigation)
+                    menu.querySelectorAll('a[href^="#"]').forEach(a => {
+                      a.addEventListener('click', () => closeMenu());
+                    });
+                
+                    // Close on Escape
+                    document.addEventListener('keydown', (e) => {
+                      if (e.key === 'Escape') closeMenu();
+                    });
+                
+                    // Close if viewport grows to desktop (prevents stuck state)
+                    const mq = window.matchMedia('(min-width: 769px)');
+                    mq.addEventListener?.('change', (e) => { if (e.matches) closeMenu(); });
+                  })();
                 </script>
                 
             
