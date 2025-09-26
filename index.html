@@ -42,8 +42,20 @@
                 <a href="#resume" class="nav-link">Resume</a>
                 <a href="#contact" class="nav-link">Let's connect!</a>
             </nav>
+            <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+              <span></span><span></span><span></span>
+            </button>
         </div>
     </header>
+    <nav id="mobile-menu" class="mobile-menu" hidden>
+      <a href="#about">About Me</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#volunteering">Volunteering</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#resume">Resume</a>
+      <a href="#contact">Let's connect!</a>
+    </nav>
 
     <section id="about" class="about">
         <h2>About Me</h2>
@@ -473,6 +485,36 @@
                   window.addEventListener('scroll', setTopState, { passive: true });
                   window.addEventListener('load', setTopState);
                 })();
+                </script>
+                
+                <script>
+                  (function () {
+                    const btn = document.querySelector('.hamburger');
+                    const panel = document.getElementById('mobile-menu');
+                    if (!btn || !panel) return;
+                
+                    function openMenu() {
+                      panel.hidden = false;
+                      requestAnimationFrame(() => panel.classList.add('open'));
+                      btn.setAttribute('aria-expanded', 'true');
+                      document.body.style.overflow = 'hidden';
+                    }
+                
+                    function closeMenu() {
+                      panel.classList.remove('open');
+                      btn.setAttribute('aria-expanded', 'false');
+                      document.body.style.overflow = '';
+                      setTimeout(() => { panel.hidden = true; }, 200);
+                    }
+                
+                    btn.addEventListener('click', () => {
+                      panel.classList.contains('open') ? closeMenu() : openMenu();
+                    });
+                
+                    panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+                    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+                    window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+                  })();
                 </script>
                 
             
