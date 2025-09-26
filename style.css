@@ -447,6 +447,7 @@ a[aria-current="page"]::after {
   display: none;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   gap: 6px;
   width: 44px;
   height: 44px;
@@ -531,9 +532,9 @@ a[aria-current="page"]::after {
   top: 0;
   right: 0;
   bottom: 0;
-  width: min(82vw, 360px);
+  width: min(70vw, 270px);
   padding: 80px 20px 24px;
-  background: #063549;
+  background: rgba(6,53,73,0.9);
   box-shadow: -10px 0 30px rgba(0,0,0,0.35);
   transform: translateX(100%);
   transition: transform 200ms ease;
