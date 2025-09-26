@@ -452,7 +452,7 @@ a[aria-current="page"]::after {
   width: 44px;
   height: 44px;
   border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 10px;
+  border-radius: 50px;
   background: rgba(6,53,73,0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
@@ -467,7 +467,7 @@ a[aria-current="page"]::after {
     max-width: 720px;
   }
   .hamburger { display: inline-flex; position: fixed; top: 12px; right: 12px; z-index: 1300; }
-.mobile-menu { padding-top: 72px; }
+.mobile-menu { padding-top: 72px; border-top-left-radius: 10px; border-bottom-left-radius: 10px;}
 
 }
 
@@ -519,7 +519,7 @@ a[aria-current="page"]::after {
 }
 
 .hamburger span {
-  display: block;
+  display: flex;
   width: 22px;
   height: 2px;
   background: #F1EDEE;
