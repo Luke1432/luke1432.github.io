@@ -142,7 +142,7 @@ function smoothScroll(target, duration = 1200) {
           const ctx = canvas.getContext("2d", { alpha: true });
           canvas.width = Math.floor(vp.width * DPR);
           canvas.height = Math.floor(vp.height * DPR);
-          canvas.style.width = `${vp.width+100}px`;
+          canvas.style.width = `${vp.width}px`;
           canvas.style.height = `${vp.height}px`;
           ctx.setTransform(1, 0, 0, 1, 0, 0);
           ctx.scale(DPR, DPR);
