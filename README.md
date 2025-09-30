@@ -1,6 +1,6 @@
-# Luke1432’s Portfolio Site
+# Lukas Fenkam’s Portfolio Site
 
-This is the source repository for my personal portfolio website, hosted at **https://luke1432.github.io** (via GitHub Pages).
+This is the source repository for my personal portfolio website, hosted at **https://luke1432.github.io** (via GitHub Pages), and accessible at **https://lukasfenkam.me/**.
 
 ---
 
@@ -96,9 +96,8 @@ python -m http.server 8000
 
 This is primarily my personal portfolio, so contributions are limited. However:
 
-- If you spot a typo, broken link, or want to suggest a design improvement, feel free to open an issue.  
+- If you spot a typo, broken link, or want to suggest a design improvement, please send me a message using the contact information found on the website.  
 - If you want to suggest new features or UI enhancements, I’d welcome your feedback.  
-- Any pull requests should include a clear description of the change and screenshots if UI is affected.
 
 ---
 
@@ -109,20 +108,5 @@ If you reuse or adapt parts, please attribute appropriately or ask me first.
 
 ---
 
-## 🧩 Future Enhancements (Ideas)
-
-- Add dark / light mode toggle  
-- Lazy-load images to improve performance  
-- Add a blog / case studies section  
-- Improve accessibility (aria labels, keyboard navigation)  
-- Add animations / transitions  
-- Integrate CMS or headless backend (if I ever want to blog dynamically)  
-
----
-
 Thank you for visiting my portfolio repo! I hope it gives you a good sense of my work and capabilities.  
 If you’d like to get in touch, feel free to contact me via email or social links (available on the live site).
-
----
-
-*Last updated: September 2025*  
