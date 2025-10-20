@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="description" content="Portfolio of Lukas Fenkam, Computer Science student at Ontario Tech University. Projects in AI, software development, and open source contributions.">
-    <meta name="application-name" content="Lukas Fenkam Portfolio">
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
-    <link rel="icon" type="image/png" sizes="171x172" href="logo.png" />
-    <link rel="icon" type="image/png" sizes="552x474" href="biglogo.png" />
-    <script type="application/ld+json">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description"
+    content="Portfolio of Lukas Fenkam, Computer Science student at Ontario Tech University. Projects in AI, software development, and open source contributions.">
+  <meta name="application-name" content="Lukas Fenkam Portfolio">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="icon" type="image/png" sizes="171x172" href="logo.png" />
+  <link rel="icon" type="image/png" sizes="552x474" href="biglogo.png" />
+  <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "WebSite",
@@ -18,518 +19,532 @@
         "url": "https://lukasfenkam.me/"
       }
     </script>
-    <meta property="og:title" content="Lukas Fenkam Portfolio">
-    <meta property="og:description" content="Portfolio of Lukas Fenkam, Computer Science student at Ontario Tech University. Projects in AI, software development, and open source contributions.">
-    <meta property="og:url" content="https://lukasfenkam.me/">
-    <meta property="og:type" content="website">
-    <meta property="og:image" content="https://lukasfenkam.me/logo.png">
-    <title>Lukas Fenkam | Computer Science Student & Developer</title>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta property="og:title" content="Lukas Fenkam Portfolio">
+  <meta property="og:description"
+    content="Portfolio of Lukas Fenkam, Computer Science student at Ontario Tech University. Projects in AI, software development, and open source contributions.">
+  <meta property="og:url" content="https://lukasfenkam.me/">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://lukasfenkam.me/logo.png">
+  <title>Lukas Fenkam | Computer Science Student & Developer</title>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
 
-      gtag('config', 'G-PTG9HVRH5Q'); 
-    </script>
+    gtag('config', 'G-PTG9HVRH5Q'); 
+  </script>
 
 </head>
 
 <body>
-    <header>
-        <img src="biglogo.png" alt="Lukas Fenkam" class="profile-pic" />
-        <div class="header-text">
-            <h1>Lukas Fenkam</h1>
-            <h2>Computer Science Student &amp; AI/Software Developer</h2>
+  <header>
+    <img src="biglogo.png" alt="Lukas Fenkam" class="profile-pic" />
+    <div class="header-text">
+      <h1>Lukas Fenkam</h1>
+      <h2>Computer Science Student &amp; AI/Software Developer</h2>
 
-            <nav class="menu-bar">
-                <a href="#about" class="nav-link">About Me</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#volunteering" class="nav-link">Volunteering</a>
-                <a href="#certifications" class="nav-link">Certifications</a>
-                <a href="#resume" class="nav-link">Resume</a>
-                <a href="#contact" class="nav-link">Let's connect!</a>
-            </nav>
-            <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
-              <span></span><span></span><span></span>
-            </button>
+      <nav class="menu-bar">
+        <a href="#about" class="nav-link">About Me</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#volunteering" class="nav-link">Volunteering</a>
+        <a href="#certifications" class="nav-link">Certifications</a>
+        <a href="#resume" class="nav-link">Resume</a>
+        <a href="#contact" class="nav-link">Let's connect!</a>
+      </nav>
+      <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav id="mobile-menu" class="mobile-menu" hidden>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#experience">Experience</a>
+    <a href="#volunteering">Volunteering</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Let's connect!</a>
+  </nav>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a third-year Computer Science student at Ontario Tech University with a strong
+      interest in artificial intelligence, software development, and open-source
+      technologies. Over the past year, I’ve gained hands-on experience in AI research
+      through a summer internship, where I contributed to forensic image analysis using
+      convolutional neural networks.
+      <br><br>
+      I enjoy solving complex problems and building tools that make a real impact—whether
+      it’s streamlining workflows with GitHub bots during my internship at Red Hat or
+      organizing HackApro, a youth hackathon that inspires the next generation of coders.
+      <br><br>
+      With a foundation in Python, Java, and C++, as well as Linux system administration
+      and Git version control, I bring both technical versatility and a collaborative
+      mindset to projects. Being fluent in English, French, and German also allows me to
+      work across diverse teams and communities.
+      <br><br>
+      Looking ahead, I’m eager to continue developing innovative, ethical, and scalable
+      tech solutions through co-op opportunities, research, and contributions to
+      open-source software.
+    </p>
+  </section>
+
+  <section class="skills">
+    <div class="skills-scroll">
+      <div class="scrolling-text">
+        <span>Python</span><span>Java</span><span>C++</span><span>Pandas</span>
+        <span>TensorFlow</span><span>Keras</span><span>Linux</span><span>GitHub</span>
+        <span>Git Bash</span><span>AI Research</span><span>Data Analysis</span>
+        <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Open Source</span>
+        <span>Multilingual</span>
+      </div>
+      <div class="scrolling-text">
+        <span>Python</span><span>Java</span><span>C++</span><span>TensorFlow</span>
+        <span>Keras</span><span>Linux</span><span>GitHub</span><span>Git Bash</span>
+        <span>AI Research</span><span>Data Analysis</span><span>HTML</span><span>CSS</span>
+        <span>JavaScript</span><span>Open Source</span><span>Multilingual</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="project-section">
+    <h2 class="subtitle">Projects</h2>
+    <div class="projects">
+      <div class="card">
+        <div class="container">
+          <h4>WhitbyStay</h4>
+          <p>
+            A responsive lodging website built with HTML, CSS, and JavaScript on Replit.
+            Implemented custom styling, mobile-first layout, accessible markup, and basic SEO.
+            Deployed with a custom domain (<code>whitbystay.ca</code>) and streamlined contact/booking flow.
+          </p>
+          <button class="project-button">
+            <a target="_blank" rel="noopener" href="https://whitbystay.ca">Live Site</a>
+          </button>
         </div>
-    </header>
-    <nav id="mobile-menu" class="mobile-menu" hidden>
-      <a href="#about">About Me</a>
-      <a href="#projects">Projects</a>
-      <a href="#experience">Experience</a>
-      <a href="#volunteering">Volunteering</a>
-      <a href="#certifications">Certifications</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Let's connect!</a>
-    </nav>
-
-    <section id="about" class="about">
-        <h2>About Me</h2>
-        <p>
-            I’m a third-year Computer Science student at Ontario Tech University with a strong
-            interest in artificial intelligence, software development, and open-source
-            technologies. Over the past year, I’ve gained hands-on experience in AI research
-            through a summer internship, where I contributed to forensic image analysis using
-            convolutional neural networks.
-            <br><br>
-            I enjoy solving complex problems and building tools that make a real impact—whether
-            it’s streamlining workflows with GitHub bots during my internship at Red Hat or
-            organizing HackApro, a youth hackathon that inspires the next generation of coders.
-            <br><br>
-            With a foundation in Python, Java, and C++, as well as Linux system administration
-            and Git version control, I bring both technical versatility and a collaborative
-            mindset to projects. Being fluent in English, French, and German also allows me to
-            work across diverse teams and communities.
-            <br><br>
-            Looking ahead, I’m eager to continue developing innovative, ethical, and scalable
-            tech solutions through co-op opportunities, research, and contributions to
-            open-source software.
-        </p>
-    </section>
-
-    <section class="skills">
-        <div class="skills-scroll">
-            <div class="scrolling-text">
-                <span>Python</span><span>Java</span><span>C++</span><span>Pandas</span>
-                <span>TensorFlow</span><span>Keras</span><span>Linux</span><span>GitHub</span>
-                <span>Git Bash</span><span>AI Research</span><span>Data Analysis</span>
-                <span>HTML</span><span>CSS</span><span>JavaScript</span><span>Open Source</span>
-                <span>Multilingual</span>
-            </div>
-            <div class="scrolling-text">
-                <span>Python</span><span>Java</span><span>C++</span><span>TensorFlow</span>
-                <span>Keras</span><span>Linux</span><span>GitHub</span><span>Git Bash</span>
-                <span>AI Research</span><span>Data Analysis</span><span>HTML</span><span>CSS</span>
-                <span>JavaScript</span><span>Open Source</span><span>Multilingual</span>
-            </div>
+      </div>
+      <div class="card">
+        <div class="container">
+          <h4>Bloodstain Pattern Analysis</h4>
+          <p>
+            A machine learning project that applies computer vision techniques to classify and
+            analyze bloodstain patterns for forensic purposes. The system focused on stain
+            classification, angle estimation, and preprocessing workflows to support accurate
+            crime scene reconstruction. Developed as part of research on forensic AI, with
+            emphasis on data quality, evaluation metrics, and practical applications for
+            investigative work.
+          </p>
+          <button class="project-button">
+            <a target="_blank" href="https://github.com/Luke1432/Bloodstain-Sample-Analysis">GitHub</a>
+          </button>
         </div>
-    </section>
+      </div>
 
-    <section id="projects" class="project-section">
-        <h2 class="subtitle">Projects</h2>
-        <div class="projects">
-            <div class="card">
-                <div class="container">
-                    <h4>Bloodstain Pattern Analysis</h4>
-                    <p>
-                        A machine learning project that applies computer vision techniques to classify and
-                        analyze bloodstain patterns for forensic purposes. The system focused on stain
-                        classification, angle estimation, and preprocessing workflows to support accurate
-                        crime scene reconstruction. Developed as part of research on forensic AI, with
-                        emphasis on data quality, evaluation metrics, and practical applications for
-                        investigative work.
-                    </p>
-                    <button class="project-button">
-                        <a target="_blank" href="https://github.com/Luke1432/Bloodstain-Sample-Analysis">GitHub</a>
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="container">
-                    <h4>Quarkus GitHub Bot</h4>
-                    <p>
-                        A GitHub automation bot developed for the Quarkus ecosystem to
-                        streamline issue and pull request management. The project focused
-                        on integrating with GitHub’s API, automating repetitive workflows,
-                        and improving contributor productivity. Built with Java and Quarkus,
-                        with emphasis on open-source collaboration, scalability, and
-                        maintainable code practices.
-                    </p>
-                    <button class="project-button">
-                        <a target="_blank" href="https://github.com/Luke1432/quarkus-github-bot">GitHub</a>
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="container">
-                    <h4>Techwave Solutions</h4>
-                    <p>
-                        A full-stack web application built with Django that provides secure authentication,
-                        role-based access, and an admin dashboard. The project focused on user management,
-                        backend integration, and clean UI workflows. Developed collaboratively using Agile
-                        practices such as retrospectives and sprint planning, with emphasis on scalability
-                        and maintainability.
-                    </p>
-                    <button class="project-button">
-                        <a target="_blank" href="https://github.com/kz4killua/techwave/">GitHub</a>
-                    </button>
-                </div>
-            </div>
-
-            <div class="card">
-                <div class="container">
-                    <h4>One Piece Pacing Analysis</h4>
-                    <p>
-                        Developed a data analysis project comparing pacing between the One Piece manga and
-                        anime using Python (NumPy, pandas, Matplotlib, Seaborn). Cleaned and structured arc
-                        data, calculated chapter-to-episode ratios, and produced visualizations that revealed
-                        clear trends in pacing shifts, demonstrating proficiency in exploratory data analysis
-                        and data storytelling.
-                    </p>
-                    <button class="project-button">
-                        <a target="_blank" href="https://github.com/Luke1432/One-Piece-Pacing-Analysis">GitHub</a>
-                    </button>
-                </div>
-            </div>
+      <div class="card">
+        <div class="container">
+          <h4>Quarkus GitHub Bot</h4>
+          <p>
+            A GitHub automation bot developed for the Quarkus ecosystem to
+            streamline issue and pull request management. The project focused
+            on integrating with GitHub’s API, automating repetitive workflows,
+            and improving contributor productivity. Built with Java and Quarkus,
+            with emphasis on open-source collaboration, scalability, and
+            maintainable code practices.
+          </p>
+          <button class="project-button">
+            <a target="_blank" href="https://github.com/Luke1432/quarkus-github-bot">GitHub</a>
+          </button>
         </div>
-    </section>
+      </div>
 
-    <section id="experience" class="experience">
-        <h2 class="subtitle">Work Experience</h2>
-        <div class="work-experience">
-            <div class="card">
-                <h4 style="display: flex; align-items: center; gap: 75px;">
-                    Research Intern — Ontario Tech University
-                    <img src="newotulogo.png" width="200" alt="Red Hat Logo" opacity="1">
-                </h4>
-                <p>Jul 2025 – Aug 2025 • Oshawa, ON</p>
-                <ul>
-                    <li>Supported AI research in forensic computing within the <a target="_blank"
-                            href="https://www.trustworthyai.ca/" class="external-link">Trustworthy AI Lab</a>.</li>
-                    <li>Prepared datasets, ran experiments, and analyzed results with the research team.</li>
-                    <li>Improved documentation and reproducibility practices across experiments.</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h4 style="display: flex; align-items: center; gap: 75px;">
-                    Software Engineering Intern — Red Hat
-                    <img src="redhatlogo.png" width="100" alt="Red Hat Logo">
-                </h4>
-                <p>July 2021</p>
-                <ul>
-                    <li>Built GitHub bot that streamlined issue/PR workflows in the Quarkus ecosystem.</li>
-                    <li>Integrated with CI processes to reduce manual overhead for maintainers.</li>
-                    <li>Collaborated in open-source: reviews, triage, and community discussion.</li>
-                </ul>
-            </div>
+      <div class="card">
+        <div class="container">
+          <h4>Techwave Solutions</h4>
+          <p>
+            A full-stack web application built with Django that provides secure authentication,
+            role-based access, and an admin dashboard. The project focused on user management,
+            backend integration, and clean UI workflows. Developed collaboratively using Agile
+            practices such as retrospectives and sprint planning, with emphasis on scalability
+            and maintainability.
+          </p>
+          <button class="project-button">
+            <a target="_blank" href="https://github.com/kz4killua/techwave/">GitHub</a>
+          </button>
         </div>
-    </section>
+      </div>
 
-    <section id="volunteering" class="volunteering">
-        <h2 class="subtitle">Volunteering</h2>
-        <div class="volunteering-cards" style="display: flex; justify-content: center; align-items: center;">
-            <div class="card">
-                <h4>Event Organizer &amp; Workshop Leader — HackApro</h4>
-                <p>2024 – Present</p>
-                <ul>
-                    <li>Co-organized a bilingual youth hackathon (60+ participants, ages 8–19).</li>
-                    <li>Led beginner-friendly coding workshops and coordinated judges/volunteers.</li>
-                    <li>Advanced inclusion by offering materials in English and French.</li>
-                </ul>
-            </div>
+      <div class="card">
+        <div class="container">
+          <h4>One Piece Pacing Analysis</h4>
+          <p>
+            Developed a data analysis project comparing pacing between the One Piece manga and
+            anime using Python (NumPy, pandas, Matplotlib, Seaborn). Cleaned and structured arc
+            data, calculated chapter-to-episode ratios, and produced visualizations that revealed
+            clear trends in pacing shifts, demonstrating proficiency in exploratory data analysis
+            and data storytelling.
+          </p>
+          <button class="project-button">
+            <a target="_blank" href="https://github.com/Luke1432/One-Piece-Pacing-Analysis">GitHub</a>
+          </button>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <section id="certifications">
-        <h2 class="subtitle">Certifications</h2>
+  <section id="experience" class="experience">
+    <h2 class="subtitle">Work Experience</h2>
+    <div class="work-experience">
+      <div class="card">
+        <h4 style="display: flex; align-items: center; gap: 75px;">
+          Research Intern — Ontario Tech University
+          <img src="newotulogo.png" width="200" alt="Red Hat Logo" opacity="1">
+        </h4>
+        <p>Jul 2025 – Aug 2025 • Oshawa, ON</p>
+        <ul>
+          <li>Supported AI research in forensic computing within the <a target="_blank"
+              href="https://www.trustworthyai.ca/" class="external-link">Trustworthy AI Lab</a>.</li>
+          <li>Prepared datasets, ran experiments, and analyzed results with the research team.</li>
+          <li>Improved documentation and reproducibility practices across experiments.</li>
+        </ul>
+      </div>
 
-        <div class="certification">
-            <h3>Generative AI: Introduction and Applications</h3>
-            <p>Issued by Coursera • Completed: January 2025</p>
-            <p><a href="ibmGenAI.pdf" target="_blank">Open in new tab</a></p>
-            <div class="pdfjs-container" id="gen-ai-cert">
-                <div class="pdfjs-view" data-pdf="ibmGenAI.pdf"></div>
-            </div>
-        </div>
+      <div class="card">
+        <h4 style="display: flex; align-items: center; gap: 75px;">
+          Software Engineering Intern — Red Hat
+          <img src="redhatlogo.png" width="100" alt="Red Hat Logo">
+        </h4>
+        <p>July 2021</p>
+        <ul>
+          <li>Built GitHub bot that streamlined issue/PR workflows in the Quarkus ecosystem.</li>
+          <li>Integrated with CI processes to reduce manual overhead for maintainers.</li>
+          <li>Collaborated in open-source: reviews, triage, and community discussion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-        <div class="certification">
-            <h3>Linux Essentials</h3>
-            <p>Issued by Linux Professional Institute • Completed: March 2021</p>
-            <p><a href="lpiLinuxEssentials.pdf" target="_blank">Open in new tab</a></p>
-            <div class="pdfjs-container" id="linux-cert">
-                <div class="pdfjs-view" data-pdf="lpiLinuxEssentials.pdf"></div>
-            </div>
-        </div>
-    </section>
+  <section id="volunteering" class="volunteering">
+    <h2 class="subtitle">Volunteering</h2>
+    <div class="volunteering-cards" style="display: flex; justify-content: center; align-items: center;">
+      <div class="card">
+        <h4>Event Organizer &amp; Workshop Leader — HackApro</h4>
+        <p>2024 – Present</p>
+        <ul>
+          <li>Co-organized a bilingual youth hackathon (60+ participants, ages 8–19).</li>
+          <li>Led beginner-friendly coding workshops and coordinated judges/volunteers.</li>
+          <li>Advanced inclusion by offering materials in English and French.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 
-    <section id="resume">
-        <h2 class="subtitle">Resume</h2>
-        <p style="text-align:center;">
-            <a class="download-btn" href="resume.pdf" download>⬇️ Download Resume (PDF)</a>
-        </p>
-        <div class="pdfjs-container"  id="resume-pdf">
-            <div class="pdfjs-view" data-pdf="resume.pdf"></div>
-        </div>
-        <p style="text-align:center; margin-top:16px;">
-            <a class="download-btn" href="resume.pdf" download>⬇️ Download Resume (PDF)</a>
-        </p>
-    </section>
+  <section id="certifications">
+    <h2 class="subtitle">Certifications</h2>
 
-    <section id="contact">
-        <div class="contact-info">
-            <h2 class="subtitle">Contact Me</h2>
-            <p>
-                <i class="fa fa-envelope"></i>
-                <a target="_blank"
-                    href="mailto:lukas@fenkam.name?subject=Portfolio%20Inquiry&body=Hi%20Lukas,%20I%20found%20your%20portfolio%20and...">
-                    lukas@fenkam.name
-                </a>
-            </p>
-            <p>
-                <i class="fab fa-linkedin"></i>
-                <a target="_blank" href="https://www.linkedin.com/in/lukas-fenkam-242a97266/">
-                    linkedin.com/in/lukas-fenkam-242a97266/
-                </a>
-            </p>
-            <p>
-                <i class="fab fa-github"></i>
-                <a target="_blank" href="https://github.com/Luke1432">
-                    github.com/Luke1432
-                </a>
-            </p>
-        </div>
-    </section>
+    <div class="certification">
+      <h3>Generative AI: Introduction and Applications</h3>
+      <p>Issued by Coursera • Completed: January 2025</p>
+      <p><a href="ibmGenAI.pdf" target="_blank">Open in new tab</a></p>
+      <div class="pdfjs-container" id="gen-ai-cert">
+        <div class="pdfjs-view" data-pdf="ibmGenAI.pdf"></div>
+      </div>
+    </div>
 
-    <button id="backToTop" title="Go to top" aria-label="Back to top">
-        <i class="fa-solid fa-arrow-up"></i>
-    </button>
+    <div class="certification">
+      <h3>Linux Essentials</h3>
+      <p>Issued by Linux Professional Institute • Completed: March 2021</p>
+      <p><a href="lpiLinuxEssentials.pdf" target="_blank">Open in new tab</a></p>
+      <div class="pdfjs-container" id="linux-cert">
+        <div class="pdfjs-view" data-pdf="lpiLinuxEssentials.pdf"></div>
+      </div>
+    </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2025 Lukas Fenkam. All rights reserved.</p>
-    </footer>
+  <section id="resume">
+    <h2 class="subtitle">Resume</h2>
+    <p style="text-align:center;">
+      <a class="download-btn" href="resume.pdf" download>⬇️ Download Resume (PDF)</a>
+    </p>
+    <div class="pdfjs-container" id="resume-pdf">
+      <div class="pdfjs-view" data-pdf="resume.pdf"></div>
+    </div>
+    <p style="text-align:center; margin-top:16px;">
+      <a class="download-btn" href="resume.pdf" download>⬇️ Download Resume (PDF)</a>
+    </p>
+  </section>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
-    <script>
-        pdfjsLib.GlobalWorkerOptions.workerSrc =
-            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
-    </script>
-    <script src="script.js"></script>
-    <script>
-        function getNav() {
-          return document.querySelector(".menu-bar");
-        }
-        
-        function setNavPaddingVar() {
-          const nav = getNav();
-          if (!nav) return;
-          const h = nav.offsetHeight || 0;
-          document.documentElement.style.setProperty("--nav-h", h + "px");
-        }
-        
-        function applyNavScrolledState() {
-          const nav = getNav();
-          if (!nav) return;
-          if ((window.scrollY || 0) > 50) nav.classList.add("scrolled");
-          else nav.classList.remove("scrolled");
-        }
-        
-        function smoothScroll(target, duration = 1200) {
-          const el = document.querySelector(target);
-          if (!el) return;
-          const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-          const nav = getNav();
-          const navH = nav ? nav.offsetHeight : 0;
-          if (prefersReduced) {
-            const y = window.pageYOffset + el.getBoundingClientRect().top - navH - 8;
-            window.scrollTo(0, y);
-            const id = target.startsWith("#") ? target.slice(1) : target;
-            if (id) history.replaceState(null, "", `#${id}`);
-            return;
-          }
-          const start = window.pageYOffset;
-          const delta = el.getBoundingClientRect().top - navH - 8;
-          let startTime = null;
-          function easeInOutQuad(t, b, c, d) {
-            t /= d / 2;
-            if (t < 1) return (c / 2) * t * t + b;
-            t--;
-            return (-c / 2) * (t * (t - 2) - 1) + b;
-          }
-          function animate(time) {
-            if (startTime === null) startTime = time;
-            const elapsed = time - startTime;
-            const run = easeInOutQuad(elapsed, start, delta, duration);
-            window.scrollTo(0, run);
-            if (elapsed < duration) {
-              requestAnimationFrame(animate);
-            } else {
-              window.scrollTo(0, start + delta);
-              const id = target.startsWith("#") ? target.slice(1) : target;
-              if (id) history.replaceState(null, "", `#${id}`);
-            }
-          }
+  <section id="contact">
+    <div class="contact-info">
+      <h2 class="subtitle">Contact Me</h2>
+      <p>
+        <i class="fa fa-envelope"></i>
+        <a target="_blank"
+          href="mailto:lukas@fenkam.name?subject=Portfolio%20Inquiry&body=Hi%20Lukas,%20I%20found%20your%20portfolio%20and...">
+          lukas@fenkam.name
+        </a>
+      </p>
+      <p>
+        <i class="fab fa-linkedin"></i>
+        <a target="_blank" href="https://www.linkedin.com/in/lukas-fenkam-242a97266/">
+          linkedin.com/in/lukas-fenkam-242a97266/
+        </a>
+      </p>
+      <p>
+        <i class="fab fa-github"></i>
+        <a target="_blank" href="https://github.com/Luke1432">
+          github.com/Luke1432
+        </a>
+      </p>
+    </div>
+  </section>
+
+  <button id="backToTop" title="Go to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <footer>
+    <p>&copy; 2025 Lukas Fenkam. All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc =
+      "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+  </script>
+  <script src="script.js"></script>
+  <script>
+    function getNav() {
+      return document.querySelector(".menu-bar");
+    }
+
+    function setNavPaddingVar() {
+      const nav = getNav();
+      if (!nav) return;
+      const h = nav.offsetHeight || 0;
+      document.documentElement.style.setProperty("--nav-h", h + "px");
+    }
+
+    function applyNavScrolledState() {
+      const nav = getNav();
+      if (!nav) return;
+      if ((window.scrollY || 0) > 50) nav.classList.add("scrolled");
+      else nav.classList.remove("scrolled");
+    }
+
+    function smoothScroll(target, duration = 1200) {
+      const el = document.querySelector(target);
+      if (!el) return;
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const nav = getNav();
+      const navH = nav ? nav.offsetHeight : 0;
+      if (prefersReduced) {
+        const y = window.pageYOffset + el.getBoundingClientRect().top - navH - 8;
+        window.scrollTo(0, y);
+        const id = target.startsWith("#") ? target.slice(1) : target;
+        if (id) history.replaceState(null, "", `#${id}`);
+        return;
+      }
+      const start = window.pageYOffset;
+      const delta = el.getBoundingClientRect().top - navH - 8;
+      let startTime = null;
+      function easeInOutQuad(t, b, c, d) {
+        t /= d / 2;
+        if (t < 1) return (c / 2) * t * t + b;
+        t--;
+        return (-c / 2) * (t * (t - 2) - 1) + b;
+      }
+      function animate(time) {
+        if (startTime === null) startTime = time;
+        const elapsed = time - startTime;
+        const run = easeInOutQuad(elapsed, start, delta, duration);
+        window.scrollTo(0, run);
+        if (elapsed < duration) {
           requestAnimationFrame(animate);
+        } else {
+          window.scrollTo(0, start + delta);
+          const id = target.startsWith("#") ? target.slice(1) : target;
+          if (id) history.replaceState(null, "", `#${id}`);
         }
-        
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener("click", function (e) {
-            const target = this.getAttribute("href");
-            if (!target || target === "#") return;
-            e.preventDefault();
-            smoothScroll(target, 1200);
-          });
-        });
-        
-        const backToTopBtn = document.getElementById("backToTop");
-        
-        function toggleBackToTop() {
-          if (!backToTopBtn) return;
-          const y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-          if (y > 400) backToTopBtn.classList.add("show");
-          else backToTopBtn.classList.remove("show");
-        }
-        
-        window.addEventListener("scroll", () => {
-          applyNavScrolledState();
-          toggleBackToTop();
-        }, { passive: true });
-        
-        window.addEventListener("load", () => {
-          setNavPaddingVar();
-          applyNavScrolledState();
-          toggleBackToTop();
-        });
-        
-        window.addEventListener("resize", () => {
-          setNavPaddingVar();
-        });
-        
-        const DPR = Math.min(window.devicePixelRatio || 1, 2);
-        const viewers = [];
-        const resizeDebounce = { id: null };
-        
-        function initAllPDFs() {
-          const nodes = document.querySelectorAll(".pdfjs-view[data-pdf]");
-          nodes.forEach(node => {
-            const url = node.getAttribute("data-pdf");
-            if (!url) return;
-            createViewer(node, url);
-          });
-          window.addEventListener("resize", () => {
-            clearTimeout(resizeDebounce.id);
-            resizeDebounce.id = setTimeout(renderAllViewers, 150);
-          }, { passive: true });
-        }
-        
-        function createViewer(rootEl, url) {
-          const wrapper = rootEl.closest(".pdfjs-container");
-          const state = { rootEl, wrapper, url, pdfDoc: null, baseViewports: [], canvases: [] };
-          rootEl.innerHTML = "";
-          pdfjsLib.getDocument(url).promise
-            .then(pdf => {
-              state.pdfDoc = pdf;
-              state.baseViewports = new Array(pdf.numPages);
-              state.canvases = new Array(pdf.numPages);
-              for (let i = 0; i < pdf.numPages; i++) {
-                const c = document.createElement("canvas");
-                state.canvases[i] = c;
-                rootEl.appendChild(c);
-              }
-              const pagePromises = [];
-              for (let n = 1; n <= pdf.numPages; n++) {
-                pagePromises.push(
-                  pdf.getPage(n).then(page => {
-                    state.baseViewports[n - 1] = page.getViewport({ scale: 1 });
-                    return page;
-                  })
-                );
-              }
-              return Promise.all(pagePromises);
-            })
-            .then(() => renderViewer(state))
-            .catch(err => {
-              rootEl.innerHTML = '<p style="color:#F1EDEE;text-align:center;">Unable to load PDF.</p>';
-              console.error("PDF load/render error:", err);
-            });
-          viewers.push(state);
-        }
-        
-        function renderAllViewers() {
-          viewers.forEach(v => renderViewer(v));
-        }
-        
-        function renderViewer(state) {
-          if (!state.pdfDoc || !state.baseViewports.length) return;
-          const containerWidth = Math.min((state.wrapper && state.wrapper.clientWidth) || 800, 1100);
-          const jobs = [];
-          for (let n = 1; n <= state.pdfDoc.numPages; n++) {
-            jobs.push(
-              state.pdfDoc.getPage(n).then(page => {
-                const base = state.baseViewports[n - 1];
-                const scale = containerWidth / base.width;
-                const vp = page.getViewport({ scale });
-                const canvas = state.canvases[n - 1];
-                const ctx = canvas.getContext("2d", { alpha: true });
-                canvas.width = Math.floor(vp.width * DPR);
-                canvas.height = Math.floor(vp.height * DPR);
-                canvas.style.width = `${vp.width}px`;
-                canvas.style.height = `${vp.height}px`;
-                ctx.setTransform(1, 0, 0, 1, 0, 0);
-                ctx.scale(DPR, DPR);
-                return page.render({
-                  canvasContext: ctx,
-                  viewport: vp,
-                  background: "rgba(0,0,0,0)"
-                }).promise;
+      }
+      requestAnimationFrame(animate);
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener("click", function (e) {
+        const target = this.getAttribute("href");
+        if (!target || target === "#") return;
+        e.preventDefault();
+        smoothScroll(target, 1200);
+      });
+    });
+
+    const backToTopBtn = document.getElementById("backToTop");
+
+    function toggleBackToTop() {
+      if (!backToTopBtn) return;
+      const y = window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
+      if (y > 400) backToTopBtn.classList.add("show");
+      else backToTopBtn.classList.remove("show");
+    }
+
+    window.addEventListener("scroll", () => {
+      applyNavScrolledState();
+      toggleBackToTop();
+    }, { passive: true });
+
+    window.addEventListener("load", () => {
+      setNavPaddingVar();
+      applyNavScrolledState();
+      toggleBackToTop();
+    });
+
+    window.addEventListener("resize", () => {
+      setNavPaddingVar();
+    });
+
+    const DPR = Math.min(window.devicePixelRatio || 1, 2);
+    const viewers = [];
+    const resizeDebounce = { id: null };
+
+    function initAllPDFs() {
+      const nodes = document.querySelectorAll(".pdfjs-view[data-pdf]");
+      nodes.forEach(node => {
+        const url = node.getAttribute("data-pdf");
+        if (!url) return;
+        createViewer(node, url);
+      });
+      window.addEventListener("resize", () => {
+        clearTimeout(resizeDebounce.id);
+        resizeDebounce.id = setTimeout(renderAllViewers, 150);
+      }, { passive: true });
+    }
+
+    function createViewer(rootEl, url) {
+      const wrapper = rootEl.closest(".pdfjs-container");
+      const state = { rootEl, wrapper, url, pdfDoc: null, baseViewports: [], canvases: [] };
+      rootEl.innerHTML = "";
+      pdfjsLib.getDocument(url).promise
+        .then(pdf => {
+          state.pdfDoc = pdf;
+          state.baseViewports = new Array(pdf.numPages);
+          state.canvases = new Array(pdf.numPages);
+          for (let i = 0; i < pdf.numPages; i++) {
+            const c = document.createElement("canvas");
+            state.canvases[i] = c;
+            rootEl.appendChild(c);
+          }
+          const pagePromises = [];
+          for (let n = 1; n <= pdf.numPages; n++) {
+            pagePromises.push(
+              pdf.getPage(n).then(page => {
+                state.baseViewports[n - 1] = page.getViewport({ scale: 1 });
+                return page;
               })
             );
           }
-          return Promise.all(jobs);
-        }
-        
-        initAllPDFs();
-        </script>
-        <script>
-            (function(){
-              const nav = document.querySelector('.menu-bar');
-              function tick(){ (window.scrollY||0) > 50 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled'); }
-              window.addEventListener('scroll', tick, { passive: true });
-              window.addEventListener('load', tick);
-            })();
-            </script>
-            <script>
-                (function () {
-                  const nav = document.querySelector('.menu-bar');
-                  function setTopState() {
-                    const y = window.scrollY || 0;
-                    if (y <= 2) nav.classList.add('at-top');
-                    else nav.classList.remove('at-top');
-                  }
-                  window.addEventListener('scroll', setTopState, { passive: true });
-                  window.addEventListener('load', setTopState);
-                })();
-                </script>
-                
-                <script>
-                  (function () {
-                    const btn = document.querySelector('.hamburger');
-                    const panel = document.getElementById('mobile-menu');
-                    if (!btn || !panel) return;
-                
-                    function openMenu() {
-                      panel.hidden = false;
-                      requestAnimationFrame(() => panel.classList.add('open'));
-                      btn.setAttribute('aria-expanded', 'true');
-                      document.body.style.overflow = 'hidden';
-                    }
-                
-                    function closeMenu() {
-                      panel.classList.remove('open');
-                      btn.setAttribute('aria-expanded', 'false');
-                      document.body.style.overflow = '';
-                      setTimeout(() => { panel.hidden = true; }, 200);
-                    }
-                
-                    btn.addEventListener('click', () => {
-                      panel.classList.contains('open') ? closeMenu() : openMenu();
-                    });
-                
-                    panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
-                    window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
-                    window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
-                  })();
-                </script>
-                
-            
-        
-        
+          return Promise.all(pagePromises);
+        })
+        .then(() => renderViewer(state))
+        .catch(err => {
+          rootEl.innerHTML = '<p style="color:#F1EDEE;text-align:center;">Unable to load PDF.</p>';
+          console.error("PDF load/render error:", err);
+        });
+      viewers.push(state);
+    }
+
+    function renderAllViewers() {
+      viewers.forEach(v => renderViewer(v));
+    }
+
+    function renderViewer(state) {
+      if (!state.pdfDoc || !state.baseViewports.length) return;
+      const containerWidth = Math.min((state.wrapper && state.wrapper.clientWidth) || 800, 1100);
+      const jobs = [];
+      for (let n = 1; n <= state.pdfDoc.numPages; n++) {
+        jobs.push(
+          state.pdfDoc.getPage(n).then(page => {
+            const base = state.baseViewports[n - 1];
+            const scale = containerWidth / base.width;
+            const vp = page.getViewport({ scale });
+            const canvas = state.canvases[n - 1];
+            const ctx = canvas.getContext("2d", { alpha: true });
+            canvas.width = Math.floor(vp.width * DPR);
+            canvas.height = Math.floor(vp.height * DPR);
+            canvas.style.width = `${vp.width}px`;
+            canvas.style.height = `${vp.height}px`;
+            ctx.setTransform(1, 0, 0, 1, 0, 0);
+            ctx.scale(DPR, DPR);
+            return page.render({
+              canvasContext: ctx,
+              viewport: vp,
+              background: "rgba(0,0,0,0)"
+            }).promise;
+          })
+        );
+      }
+      return Promise.all(jobs);
+    }
+
+    initAllPDFs();
+  </script>
+  <script>
+    (function () {
+      const nav = document.querySelector('.menu-bar');
+      function tick() { (window.scrollY || 0) > 50 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled'); }
+      window.addEventListener('scroll', tick, { passive: true });
+      window.addEventListener('load', tick);
+    })();
+  </script>
+  <script>
+    (function () {
+      const nav = document.querySelector('.menu-bar');
+      function setTopState() {
+        const y = window.scrollY || 0;
+        if (y <= 2) nav.classList.add('at-top');
+        else nav.classList.remove('at-top');
+      }
+      window.addEventListener('scroll', setTopState, { passive: true });
+      window.addEventListener('load', setTopState);
+    })();
+  </script>
+
+  <script>
+    (function () {
+      const btn = document.querySelector('.hamburger');
+      const panel = document.getElementById('mobile-menu');
+      if (!btn || !panel) return;
+
+      function openMenu() {
+        panel.hidden = false;
+        requestAnimationFrame(() => panel.classList.add('open'));
+        btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMenu() {
+        panel.classList.remove('open');
+        btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        setTimeout(() => { panel.hidden = true; }, 200);
+      }
+
+      btn.addEventListener('click', () => {
+        panel.classList.contains('open') ? closeMenu() : openMenu();
+      });
+
+      panel.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
+      window.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeMenu(); });
+      window.addEventListener('resize', () => { if (window.innerWidth > 768) closeMenu(); });
+    })();
+  </script>
+
+
+
+
 
 </body>
 
