@@ -428,6 +428,7 @@ a[aria-current="page"]::after {
   box-shadow: 0 8px 24px rgba(0,0,0,0.25);
   background: transparent;
   height: 200vh;
+  background-color: #F1EDEE;
 }
 
 #resume { padding: 32px 0; }
@@ -439,6 +440,7 @@ a[aria-current="page"]::after {
   border: 0;
   object-fit: contain;
   border-radius: 12px;
+  background-color: #F1EDEE;
 }
 
 /* Hamburger button (hidden on desktop) */
