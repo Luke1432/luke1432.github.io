@@ -47,8 +47,8 @@
 
       <nav class="menu-bar">
         <a href="#about" class="nav-link">About Me</a>
-        <a href="#projects" class="nav-link">Projects</a>
         <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
         <a href="#volunteering" class="nav-link">Volunteering</a>
         <a href="#certifications" class="nav-link">Certifications</a>
         <a href="#resume" class="nav-link">Resume</a>
@@ -61,8 +61,8 @@
   </header>
   <nav id="mobile-menu" class="mobile-menu" hidden>
     <a href="#about">About Me</a>
-    <a href="#projects">Projects</a>
     <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
     <a href="#volunteering">Volunteering</a>
     <a href="#certifications">Certifications</a>
     <a href="#resume">Resume</a>
@@ -72,7 +72,7 @@
   <section id="about" class="about">
     <h2>About Me</h2>
     <p>
-      I’m a third-year Computer Science student at Ontario Tech University with a strong
+      I’m a fourth-year Computer Science student at Ontario Tech University with a strong
       interest in artificial intelligence, software development, and open-source
       technologies. Over the past year, I’ve gained hands-on experience in AI research
       through a summer internship, where I contributed to forensic image analysis using
@@ -111,20 +111,57 @@
     </div>
   </section>
 
+  <section id="experience" class="experience">
+    <h2 class="subtitle">Work Experience</h2>
+    <div class="work experience">
+      <div class="card">
+          <h4 style="display: flex; align-items: center; gap: 75px;">
+            AI Pioneer — TD Synnex
+            <img src="td synnex.png" width="200" alt="TD Synnex Logo">
+          </h4>
+          <p>May 2026 - August 2026 • Mississauga, ON</p>
+          <p>
+            Led the Inventory Fulfillment project end-to-end, building a NexChat agent that lets salespeople enter a Customer
+            Purchase Order ID and instantly receive fulfillment options and recommendations.
+            Helped design & execute the solution, led the testing process, validating fulfillment recommendations before delivery.
+            Coordinated the project as lead — running meetings, maintaining technical documentation, and keeping the team aligned
+            through delivery.
+          </p>
+        </div>
+      </div>
+    <div class="work-experience">
+      <div class="card">
+        <h4 style="display: flex; align-items: center; gap: 75px;">
+          Research Intern — Ontario Tech University
+          <img src="newotulogo.png" width="200" alt="Red Hat Logo" opacity="1">
+        </h4>
+        <p>Jul 2025 – Aug 2025 • Oshawa, ON</p>
+        <ul>
+          <li>Supported AI research in forensic computing within the <a target="_blank"
+              href="https://www.trustworthyai.ca/" class="external-link">Trustworthy AI Lab</a>.</li>
+          <li>Prepared datasets, ran experiments, and analyzed results with the research team.</li>
+          <li>Improved documentation and reproducibility practices across experiments.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h4 style="display: flex; align-items: center; gap: 75px;">
+          Software Engineering Intern — Red Hat
+          <img src="redhatlogo.png" width="100" alt="Red Hat Logo">
+        </h4>
+        <p>July 2021</p>
+        <ul>
+          <li>Built GitHub bot that streamlined issue/PR workflows in the Quarkus ecosystem.</li>
+          <li>Integrated with CI processes to reduce manual overhead for maintainers.</li>
+          <li>Collaborated in open-source: reviews, triage, and community discussion.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section id="projects" class="project-section">
     <h2 class="subtitle">Projects</h2>
     <div class="projects">
-      <div class="card">
-        <h4>AI Pioneer — TD Synnex</h4>
-        <p>
-           I led the Inventory Fulfillment project end-to-end, building a NexChat agent that lets salespeople enter a Customer
-          Purchase Order ID and instantly receive fulfillment options and recommendations.
-          With my team, I implemented the recommendation logic into the NexChat agent using Python, with Bitbucket for version control.
-          I helped design execute the solution, and led the testing process, validating fulfillment recommendations before delivery.
-          I coordinated the project as lead — running meetings, maintaining technical documentation, and keeping the team aligned
-          through delivery.
-        </p>
-      </div>
       <!-- Site inactive-->
       <!-- <div class="card">
         <div class="container">
@@ -203,38 +240,6 @@
             <a target="_blank" href="https://github.com/Luke1432/One-Piece-Pacing-Analysis">GitHub</a>
           </button>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="experience" class="experience">
-    <h2 class="subtitle">Work Experience</h2>
-    <div class="work-experience">
-      <div class="card">
-        <h4 style="display: flex; align-items: center; gap: 75px;">
-          Research Intern — Ontario Tech University
-          <img src="newotulogo.png" width="200" alt="Red Hat Logo" opacity="1">
-        </h4>
-        <p>Jul 2025 – Aug 2025 • Oshawa, ON</p>
-        <ul>
-          <li>Supported AI research in forensic computing within the <a target="_blank"
-              href="https://www.trustworthyai.ca/" class="external-link">Trustworthy AI Lab</a>.</li>
-          <li>Prepared datasets, ran experiments, and analyzed results with the research team.</li>
-          <li>Improved documentation and reproducibility practices across experiments.</li>
-        </ul>
-      </div>
-
-      <div class="card">
-        <h4 style="display: flex; align-items: center; gap: 75px;">
-          Software Engineering Intern — Red Hat
-          <img src="redhatlogo.png" width="100" alt="Red Hat Logo">
-        </h4>
-        <p>July 2021</p>
-        <ul>
-          <li>Built GitHub bot that streamlined issue/PR workflows in the Quarkus ecosystem.</li>
-          <li>Integrated with CI processes to reduce manual overhead for maintainers.</li>
-          <li>Collaborated in open-source: reviews, triage, and community discussion.</li>
-        </ul>
       </div>
     </div>
   </section>

@@ -49,6 +49,9 @@ header {
   position: relative;
   overflow: visible;
   display: flex;
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
   align-items: center;
   gap: 16px;
   background: #063549;
@@ -130,6 +133,9 @@ section h2, section h3 {
   flex-direction: column;
   height: 100%;
   opacity: 75%;
+  width: 100%;
+  max-width: None;
+  margin-top: 30px;
 }
 
 .card:hover {
