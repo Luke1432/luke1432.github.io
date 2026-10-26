@@ -7,19 +7,19 @@
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://lukasfenkam.me/resume.pdf</loc>
+    <loc>https://lukasfenkam.me/site%20pdfs/resume.pdf</loc>
     <lastmod>2025-09-25T18:20:20+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://lukasfenkam.me/ibmGenAI.pdf</loc>
+    <loc>https://lukasfenkam.me/site%20pdfs/ibmGenAI.pdf</loc>
     <lastmod>2025-09-25T18:20:20+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://lukasfenkam.me/lpiLinuxEssentials.pdf</loc>
+    <loc>https://lukasfenkam.me/site%20pdfs/lpiLinuxEssentials.pdf</loc>
     <lastmod>2025-09-25T18:20:20+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.80</priority>
