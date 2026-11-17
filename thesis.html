@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="description" content="Updates and research notes from Lukas Fenkam's honours thesis at Ontario Tech University.">
+  <link rel="stylesheet" href="site%20files/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+  <link rel="icon" type="image/png" sizes="171x172" href="images/logo.png" />
+  <link rel="icon" type="image/png" sizes="552x474" href="images/biglogo.png" />
+  <title>Lukas Fenkam | Honours Thesis</title>
+  <style>
+    .thesis {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .thesis-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .thesis-tabs button {
+      font: inherit;
+      color: #F1EDEE;
+      background: rgba(6,53,73,0.55);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 999px;
+      padding: 8px 18px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .thesis-tabs button:hover { background: #145A7A; }
+
+    .thesis-tabs button.active {
+      background: #F1EDEE;
+      color: #063549;
+    }
+
+    .thesis .intro {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .post-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .post-card { height: auto; }
+
+    .post-card h3 {
+      text-align: left;
+      margin: 0 0 4px;
+    }
+
+    .post-card h3 a {
+      color: #063549;
+      padding: 0;
+    }
+
+    .post-meta {
+      font-size: 0.9rem;
+      margin: 0 0 8px;
+      opacity: 0.85;
+    }
+
+    .post-tag {
+      display: inline-block;
+      background: #0B4F6C;
+      color: #F1EDEE;
+      border-radius: 999px;
+      padding: 0 10px;
+      margin-left: 6px;
+      font-size: 0.8rem;
+    }
+
+    .post-card .project-button {
+      color: #F1EDEE;
+      font: inherit;
+    }
+
+    /* The open post is for reading, so no fade or hover lift */
+    .post-full {
+      opacity: 100%;
+      height: auto;
+    }
+
+    .post-full:hover { transform: none; }
+
+    /* Keep single line breaks in post bodies, so numbered and dashed lists show one item per line */
+    .post-full p { white-space: pre-line; }
+
+    .post-full h2 {
+      text-align: left;
+      margin: 0 0 4px;
+    }
+
+    .post-links h3 {
+      text-align: left;
+      margin: 20px 0 8px;
+      font-size: 1rem;
+    }
+
+    .post-links .link-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .post-links .project-button {
+      color: #F1EDEE;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 0;
+    }
+
+    .back-link { margin-top: 16px; }
+
+    .empty {
+      text-align: center;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="images/biglogo.png" alt="Lukas Fenkam" class="profile-pic" />
+    <div class="header-text">
+      <h1>Lukas Fenkam</h1>
+      <h2>Honours Thesis</h2>
+
+      <nav class="menu-bar">
+        <a href="index.html#about" class="nav-link">About Me</a>
+        <a href="index.html#experience" class="nav-link">Experience</a>
+        <a href="index.html#projects" class="nav-link">Projects</a>
+        <a href="index.html#volunteering" class="nav-link">Volunteering</a>
+        <a href="index.html#certifications" class="nav-link">Certifications</a>
+        <a href="index.html#resume" class="nav-link">Resume</a>
+        <a href="thesis.html" class="nav-link" aria-current="page">Honours Thesis</a>
+        <a href="index.html#contact" class="nav-link">Let's connect!</a>
+      </nav>
+      <button class="hamburger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+  <nav id="mobile-menu" class="mobile-menu" hidden>
+    <a href="index.html#about">About Me</a>
+    <a href="index.html#experience">Experience</a>
+    <a href="index.html#projects">Projects</a>
+    <a href="index.html#volunteering">Volunteering</a>
+    <a href="index.html#certifications">Certifications</a>
+    <a href="index.html#resume">Resume</a>
+    <a href="thesis.html">Honours Thesis</a>
+    <a href="index.html#contact">Let's connect!</a>
+  </nav>
+
+  <main class="thesis">
+    <nav class="thesis-tabs" id="thesis-tabs"></nav>
+
+    <!-- Home: intro and latest posts from every category -->
+    <section id="view-home" hidden>
+      <h2 class="subtitle">My Honours Thesis</h2>
+      <p class="intro">
+        This page is where I share my honours thesis work, supervised by Dr. Ken Pu at Ontario Tech University: what I work on, what I learn,
+        and what I am stuck on. Posts are sorted into the categories above.
+      </p>
+      <h3>Latest posts</h3>
+      <div class="post-list" id="home-posts"></div>
+    </section>
+
+    <!-- One category's posts -->
+    <section id="view-category" hidden>
+      <h2 class="subtitle" id="category-title"></h2>
+      <p class="intro" id="category-description"></p>
+      <div class="post-list" id="category-posts"></div>
+    </section>
+
+    <!-- A single post -->
+    <section id="view-post" hidden>
+      <a href="#" class="back-link" id="back-link"><i class="fa-solid fa-arrow-left"></i> Back</a>
+      <article class="card post-full" id="post-full"></article>
+    </section>
+  </main>
+
+  <button id="backToTop" title="Go to top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <footer>
+    <p>&copy; 2026 Lukas Fenkam. All rights reserved.</p>
+  </footer>
+
+  <script src="site%20files/thesis-posts.js"></script>
+  <script>
+    const $ = id => document.getElementById(id);
+    const EXCERPT_LENGTH = 280;
+
+    // Post dates are written in Toronto time without an offset, so parse them as written
+    function formatDate(date) {
+      const [d, t = "00:00"] = date.split("T");
+      const [y, m, day] = d.split("-").map(Number);
+      const [h, min] = t.split(":").map(Number);
+      return new Date(y, m - 1, day, h, min).toLocaleString("en-CA", {
+        dateStyle: "long", timeStyle: "short"
+      });
+    }
+
+    function categoryName(id) {
+      const cat = THESIS_CATEGORIES.find(c => c.id === id);
+      return cat ? cat.name : id;
+    }
+
+    function newestFirst(posts) {
+      return [...posts].sort((a, b) => b.date.localeCompare(a.date));
+    }
+
+    function createMeta(post) {
+      const meta = document.createElement("p");
+      meta.className = "post-meta";
+      meta.textContent = `Lukas Fenkam · ${formatDate(post.date)}`;
+      const tag = document.createElement("span");
+      tag.className = "post-tag";
+      tag.textContent = categoryName(post.category);
+      meta.appendChild(tag);
+      return meta;
+    }
+
+    function createParagraphs(text) {
+      return text.split(/\n\s*\n/).map(chunk => {
+        const p = document.createElement("p");
+        p.textContent = chunk.trim();
+        return p;
+      });
+    }
+
+    // Optional documentation links under a full post: [{ label, url }, ...]
+    function createLinks(post) {
+      if (!post.links || !post.links.length) return [];
+      const section = document.createElement("div");
+      section.className = "post-links";
+      const heading = document.createElement("h3");
+      heading.textContent = "Documentation & code";
+      const row = document.createElement("div");
+      row.className = "link-row";
+      post.links.forEach(({ label, url }) => {
+        const a = document.createElement("a");
+        a.className = "project-button";
+        a.href = url;
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.innerHTML = '<i class="fa-solid fa-arrow-up-right-from-square"></i> ';
+        a.append(label);
+        row.appendChild(a);
+      });
+      section.append(heading, row);
+      return [section];
+    }
+
+    function createPostCard(post) {
+      const card = document.createElement("div");
+      card.className = "card post-card";
+
+      const title = document.createElement("h3");
+      const link = document.createElement("a");
+      link.href = `#post/${post.id}`;
+      link.textContent = post.title;
+      title.appendChild(link);
+
+      const excerpt = document.createElement("p");
+      excerpt.textContent = post.body.length > EXCERPT_LENGTH
+        ? post.body.slice(0, EXCERPT_LENGTH).trimEnd() + "…"
+        : post.body;
+
+      const open = document.createElement("button");
+      open.className = "project-button";
+      open.innerHTML = '<i class="fa-solid fa-book-open"></i> Read more';
+      open.onclick = () => { location.hash = `post/${post.id}`; };
+
+      card.append(title, createMeta(post), excerpt, open);
+      return card;
+    }
+
+    function renderList(container, posts) {
+      container.innerHTML = "";
+      if (!posts.length) {
+        const empty = document.createElement("p");
+        empty.className = "empty";
+        empty.textContent = "No posts here yet.";
+        container.appendChild(empty);
+        return;
+      }
+      newestFirst(posts).forEach(post => container.appendChild(createPostCard(post)));
+    }
+
+    function renderTabs(activeId) {
+      const tabs = $("thesis-tabs");
+      tabs.innerHTML = "";
+      [{ id: "home", name: "Home" }, ...THESIS_CATEGORIES].forEach(cat => {
+        const btn = document.createElement("button");
+        btn.textContent = cat.name;
+        if (cat.id === activeId) btn.classList.add("active");
+        btn.onclick = () => { location.hash = cat.id === "home" ? "" : cat.id; };
+        tabs.appendChild(btn);
+      });
+    }
+
+    function showView(name) {
+      ["home", "category", "post"].forEach(v => { $(`view-${v}`).hidden = v !== name; });
+      window.scrollTo(0, 0);
+    }
+
+    function showHome() {
+      renderTabs("home");
+      renderList($("home-posts"), newestFirst(THESIS_POSTS).slice(0, 5));
+      showView("home");
+    }
+
+    function showCategory(cat) {
+      renderTabs(cat.id);
+      $("category-title").textContent = cat.name;
+      $("category-description").textContent = cat.description;
+      renderList($("category-posts"), THESIS_POSTS.filter(p => p.category === cat.id));
+      showView("category");
+    }
+
+    function showPost(post) {
+      renderTabs(post.category);
+      const article = $("post-full");
+      article.innerHTML = "";
+      const title = document.createElement("h2");
+      title.textContent = post.title;
+      article.append(title, createMeta(post), ...createParagraphs(post.body), ...createLinks(post));
+      $("back-link").href = `#${post.category}`;
+      document.title = `${post.title} | Lukas Fenkam`;
+      showView("post");
+    }
+
+    // Routes: "" -> home, "#<category>" -> category list, "#post/<id>" -> single post
+    function route() {
+      document.title = "Lukas Fenkam | Honours Thesis";
+      const hash = decodeURIComponent(location.hash.slice(1));
+      if (hash.startsWith("post/")) {
+        const post = THESIS_POSTS.find(p => p.id === hash.slice(5));
+        if (post) return showPost(post);
+      }
+      const cat = THESIS_CATEGORIES.find(c => c.id === hash);
+      if (cat) return showCategory(cat);
+      showHome();
+    }
+
+    window.addEventListener("hashchange", route);
+    route();
+  </script>
+  <script>
+    (function () {
+      const nav = document.querySelector(".menu-bar");
+      const backToTopBtn = $("backToTop");
+
+      function setNavPaddingVar() {
+        document.documentElement.style.setProperty("--nav-h", (nav.offsetHeight || 0) + "px");
+      }
+
+      function onScroll() {
+        const y = window.scrollY || 0;
+        nav.classList.toggle("scrolled", y > 50);
+        nav.classList.toggle("at-top", y <= 2);
+        backToTopBtn.classList.toggle("show", y > 400);
+      }
+
+      backToTopBtn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+      window.addEventListener("scroll", onScroll, { passive: true });
+      window.addEventListener("resize", setNavPaddingVar);
+      window.addEventListener("load", () => { setNavPaddingVar(); onScroll(); });
+    })();
+  </script>
+  <script>
+    (function () {
+      const btn = document.querySelector(".hamburger");
+      const panel = document.getElementById("mobile-menu");
+      if (!btn || !panel) return;
+
+      function openMenu() {
+        panel.hidden = false;
+        requestAnimationFrame(() => panel.classList.add("open"));
+        btn.setAttribute("aria-expanded", "true");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeMenu() {
+        panel.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
+        setTimeout(() => { panel.hidden = true; }, 200);
+      }
+
+      btn.addEventListener("click", () => {
+        panel.classList.contains("open") ? closeMenu() : openMenu();
+      });
+
+      panel.querySelectorAll("a").forEach(a => a.addEventListener("click", closeMenu));
+      window.addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
+      window.addEventListener("resize", () => { if (window.innerWidth > 768) closeMenu(); });
+    })();
+  </script>
+</body>
+
+</html>
