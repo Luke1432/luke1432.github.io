@@ -1,0 +1,136 @@
+\documentclass[letterpaper,11pt]{extarticle}
+% Encoding & links
+\usepackage[utf8]{inputenc}
+\usepackage[hidelinks]{hyperref}
+% Layout & styling
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{amssymb}
+\usepackage[usenames,dvipsnames]{color}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+% Margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.6in}
+\addtolength{\textwidth}{1.2in}
+\addtolength{\topmargin}{-1.0in}
+\addtolength{\textheight}{2.5in}
+% Spacing & text settings
+\raggedright
+\setlength{\parindent}{0pt}
+\renewcommand{\baselinestretch}{1.0}
+\setlength{\columnsep}{1.2em}
+\setlength{\multicolsep}{3pt}
+% Square bullet
+\newcommand{\sqbull}{\raisebox{0.35ex}{\tiny$\blacksquare$}}
+% List spacing
+\setlist[itemize]{leftmargin=0.18in,itemsep=0pt,topsep=1pt,parsep=0pt,partopsep=0pt}
+% Section title
+\titleformat{\section}{\large\bfseries\scshape}{}{0em}{}[\color{black}\titlerule]
+\titlespacing{\section}{0pt}{2pt}{2pt}
+% Macros
+\newcommand{\resumeItem}[1]{\item\small{#1}}
+\newcommand{\resumeSubheading}[4]{%
+  \vspace{1pt}\item%
+  \begin{tabular*}{0.99\textwidth}{l@{\extracolsep{\fill}}r}
+    \textbf{#1} & \textbf{#2} \\
+    \small #3 & \itshape\small #4
+  \end{tabular*}\vspace{0pt}
+}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[label={},leftmargin=0in]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[label=\sqbull]}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-4pt}}
+%-------------------------------------------
+\begin{document}
+\vspace*{4pt}
+%----------HEADER----------
+\begin{center}
+  {\Huge \bfseries \scshape Lukas Fenkam} \\[3pt]
+  \small
+  \href{mailto:lukas@fenkam.name}{lukas@fenkam.name} \, $|$ \,
+  \href{tel:6472212332}{647-221-2332} \, $|$ \,
+  Toronto, ON \\[2pt]
+  \href{https://linkedin.com/in/lukas-fenkam}{linkedin.com/in/lukas-fenkam} \, $|$ \,
+  \href{https://lukasfenkam.me}{lukasfenkam.me} \, $|$ \,
+  \href{https://github.com/Luke1432}{github.com/Luke1432} \\[4pt]
+\end{center}
+%----------SUMMARY----------
+\section{Summary of Qualifications}
+Fourth-year Computer Science (Honours) student specialising in speech ML and agentic AI — with industry experience building a production NexChat agent at TD SYNNEX, honours thesis research on whether speech models capture sentiment, and CNN-based forensic classification at Ontario Tech's Trustworthy AI Lab. Proficient in PyTorch, HuggingFace Transformers, and Python. Trilingual: English, French, German.
+
+%----------TECHNICAL LITERACY----------
+\section{Technical Literacy}
+\small
+\textbf{Programming Languages:} Python, Java, C++, JavaScript, SQL, HTML/CSS \\[2pt]
+\textbf{AI \& Machine Learning:} LLM agents, prompt engineering, PyTorch, HuggingFace Transformers, TensorFlow, Keras, scikit-learn, CNNs, computer vision (YOLO, MediaPipe), speech models (Whisper, Kokoro) \\[2pt]
+\textbf{Data Analysis:} NumPy, Pandas, Matplotlib, Seaborn \\[2pt]
+\textbf{Frameworks \& Tools:} Django, Quarkus, Linux, Ansible, Samba/NFS, shell scripting, Git/GitHub, Bitbucket, Claude Code
+\normalsize
+%----------CERTIFICATIONS----------
+\section{Certifications}
+\begin{itemize}[label=\checkmark,leftmargin=1.4em,itemsep=1pt,topsep=2pt,parsep=0pt]
+  \item \small LPI Linux Essentials
+\end{itemize}
+%----------EDUCATION----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Ontario Tech University}{Oshawa, ON}
+    {Bachelor of Science (Honours) --- Computer Science}{Sept 2023 -- Jun 2027 (Expected)}
+  \resumeItemListStart
+    \resumeItem{Relevant courses: Data Structures, Analysis and Design of Algorithms, Machine Learning, Mobile Devices.}
+    \resumeItem{Thesis: \textit{Can a speech model hear sentiment?} Supervised by Dr.~Ken Pu.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+%----------EXPERIENCE----------
+\section{Professional \& Research Experience}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Honours Thesis Research --- Ontario Tech University}{Oshawa, ON}
+    {Independent Researcher (Supervisor: Ken Pu) $|$ \href{https://github.com/Luke1432}{github.com/Luke1432}}{Sept 2026 -- Apr 2027}
+  \resumeItemListStart
+    \resumeItem{Researching whether a speech-to-text model's internal representations capture the \textbf{sentiment} of speech, by training probes on the model's internal activations.}
+    \resumeItem{Completed Phase 1: catalogued \textbf{24 small audio models}, tested \textbf{Whisper} (speech-to-text) and \textbf{Kokoro} (text-to-speech), and built an interactive web app with audio input and output.}
+    \resumeItem{Publish a dated public research log on \href{https://lukasfenkam.me/thesis.html}{lukasfenkam.me}, kept up to date with \textbf{Claude Code}.}
+  \resumeItemListEnd
+  \resumeSubheading
+    {TD SYNNEX}{Mississauga, ON}
+    {AI Engineering Intern (AI Pioneer Program)}{May 2026 -- Aug 2026}
+  \resumeItemListStart
+    \resumeItem{Led the Inventory Fulfillment project end-to-end, building a \textbf{NexChat} agentic AI tool that lets salespeople enter a Customer Purchase Order ID and instantly receive fulfillment options and recommendations.}
+    \resumeItem{Implemented recommendation logic in \textbf{Python} with \textbf{Bitbucket} for version control; designed and executed the full testing process, validating fulfillment recommendations before delivery.}
+    \resumeItem{Coordinated the project as lead --- running meetings, maintaining technical documentation, and keeping the team aligned through delivery.}
+  \resumeItemListEnd
+  \resumeSubheading
+    {Trustworthy AI Lab, Ontario Tech University}{Oshawa, ON}
+    {Research Intern}{Jul 2025 -- Aug 2025}
+  \resumeItemListStart
+    \resumeItem{Trained a \textbf{CNN} to classify bloodstain patterns, achieving \textbf{80\% accuracy}; preprocessed and augmented imbalanced datasets to improve generalisation and reduce overfitting.}
+    \resumeItem{Collaborated with graduate researchers to integrate results into a publication-ready pipeline.}
+  \resumeItemListEnd
+  \resumeSubheading
+    {Red Hat Inc.}{Remote}
+    {Software Engineering Intern}{Jul 2021 (1 month)}
+  \resumeItemListStart
+    \resumeItem{Contributed \textbf{five merged pull requests} to the official \textbf{Java/Quarkus} GitHub bot that manages issues and pull requests for the Quarkus project, adding automatic triage labelling and reducing notification noise for maintainers.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+%----------COMMUNITY----------
+\section{Community Involvement}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Aproresco HackApro Hackathon (French)}{Greater Toronto Area}
+    {Organizer \& Workshop Leader}{Jan 2024 -- Present}
+  \resumeItemListStart
+    \resumeItem{Planned and executed a yearly hackathon for \textbf{60+ participants}; designed and led an interactive \textbf{Scratch} workshop increasing beginner participation.}
+  \resumeItemListEnd
+\resumeSubHeadingListEnd
+\end{document}

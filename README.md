@@ -31,7 +31,7 @@ Here’s an overview of the main files and directories:
 ├── index.html         # Main landing page
 ├── logo.png            # Logo displayed on the site
 ├── pattern.png        # Background / decorative graphic
-├── resume.pdf         # My up-to-date résumé
+├── resume.tex         # Résumé source (compiled to Lukas_Fenkam_Resume.pdf by GitHub Actions)
 ├── script.js           # JavaScript for interactivity
 └── style.css           # Styling (CSS) for layout, design, responsiveness
 ```
@@ -41,7 +41,7 @@ Here’s an overview of the main files and directories:
 | `index.html`     | Main entry point / homepage of the site |
 | `style.css`       | Contains all custom CSS styles |
 | `script.js`        | Adds interactivity, animations, or dynamic behavior |
-| `resume.pdf`       | Downloadable version of my résumé |
+| `resume.tex`       | Résumé source; a GitHub Actions workflow builds `Lukas_Fenkam_Resume.pdf` from it |
 | Image files        | Logos, icons, patterns, banners used in the site |
 | `CNAME`             | (Optional) Used if you’re pointing a custom domain to GitHub Pages |
 

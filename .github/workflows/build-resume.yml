@@ -1,0 +1,46 @@
+# Compiles "site pdfs/resume.tex" into "site pdfs/Lukas_Fenkam_Resume.pdf"
+# (the file the site's download button and viewer use) and commits it back.
+# Commits made with GITHUB_TOKEN don't re-trigger workflows, so this can't loop.
+name: Build resume PDF
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - "site pdfs/resume.tex"
+  workflow_dispatch: # allows a manual run from the Actions tab
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-resume
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Compile LaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          working_directory: site pdfs
+          root_file: resume.tex
+
+      - name: Rename to the file the site serves
+        run: mv "site pdfs/resume.pdf" "site pdfs/Lukas_Fenkam_Resume.pdf"
+
+      - name: Commit PDF if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "site pdfs/Lukas_Fenkam_Resume.pdf"
+          if git diff --cached --quiet; then
+            echo "PDF unchanged; nothing to commit."
+          else
+            git commit -m "Rebuild resume PDF from resume.tex"
+            git push
+          fi
