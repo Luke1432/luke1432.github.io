@@ -104,6 +104,15 @@ section h2, section h3 {
 
 .subtitle { padding: 16px 0; }
 
+/* Card titles are h3 for correct heading order; keep the old h4 look. */
+.projects .card h3,
+.work-experience .card h3,
+.volunteering-cards .card h3 {
+  font-size: 1rem;
+  text-align: left;
+  margin: 1.33em 0;
+}
+
 .projects,
 .work-experience,
 .volunteering-cards {
@@ -216,7 +225,7 @@ section h2, section h3 {
 .skills-scroll {
   display: flex;
   width: max-content;
-  animation: scroll 25s linear infinite;
+  animation: scroll 50s linear infinite;
 }
 
 .scrolling-text {
