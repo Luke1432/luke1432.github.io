@@ -614,3 +614,29 @@ a[aria-current="page"]::after {
   background: rgba(255,255,255,0.08);
   border-color: rgba(255,255,255,0.15);
 }
+
+/* ===== Experience card titles: name on the left, logo on the right ===== */
+.job-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+.job-title img {
+  flex-shrink: 1;
+  min-width: 0;
+  max-width: 40%;
+  height: auto;
+}
+
+/* On phones, stack the logo under the title so nothing overflows */
+@media (max-width: 600px) {
+  .job-title {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  .job-title img {
+    max-width: 140px;
+  }
+}
