@@ -152,6 +152,27 @@ section h2, section h3 {
   box-shadow: 0 8px 18px rgba(0,0,0,0.18);
 }
 
+.project-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  background: #fff;
+}
+
+/* Rows size to their own content so a tall featured card doesn't stretch the others. */
+.projects { grid-auto-rows: auto; }
+
+.projects .card.featured { grid-column: 1 / -1; }
+
+@media (min-width: 768px) {
+  .featured-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: center;
+  }
+}
+
 .card > .container {
   display: flex;
   flex-direction: column;
